@@ -1,9 +1,77 @@
-{% extends 'base.html' %}
-{% block  title %} Home {% endblock %}
-{% block content %}
+{% extends 'base.html' %} {% block title %} Home {% endblock %} {% block content
+%}
+<style>
+    @media screen and (min-width: 480px) {
+        .landing_gif {
+            width: 400px;
+            height: 200px;
+        }
+    }
+</style>
 
-<div class="container-fluid">
-    this is the home page
+
+
+<div class="container text-center mx-auto p-2 mt-2" >
+  <div class="row">
+    <div class="col flex-sm-wrap">
+      <img
+      src="{{ url_for('static', filename='landing.gif') }}"
+      alt="Welcome to our store"
+      class="landing_gif"
+    />
+    </div>
+  </div>
+   <button href="/products" class="btn btn-primary text-light border border-0 rounded-pill p-2 px-4 fw-semibold m-3" style="background-color: #E27A0E;">Shop Now</button>
 </div>
+
+<div class="container-fluid mt-3  bg-dark">
+  <div class="row g-4 mx-2 mt-4 mb-2">
+  <div class="card text-center border border-0 col-sm-12 col-md-6 col-lg-3 bg-dark">
+  <i class="fa-sharp fa-solid fa-truck-fast fa-float fa-2xl mx-auto p-2 mt-3" style="color: rgb(244, 118, 0); margin-bottom: 20px"></i>
+  <div class="card-body ">
+    <h5 class="card-title mb-3 " style="color: #E27A0E;" >Fast Shipping</h5>
+    <p class="card-text text-light">Get your orders delivered in as little as 2 days, with real-time 
+  tracking every step of the way.</p>
+  </div>
+  </div>
+  <div class="card text-center border border-0 col-sm-12 col-md-6 col-lg-3 bg-dark" >
+ <i class="fa-solid fa-credit-card fa-float fa-2xl fa-2xl mx-auto p-2 mt-3" style="color: rgb(244, 118, 0); margin-bottom: 20px"></i>
+  <div class="card-body ">
+    <h5 class="card-title mb-3 " style="color: #E27A0E;" >Secure Checkout</h5>
+    <p class="card-text text-light">
+  Shop with confidence using encrypted payments and support for all major cards 
+  and digital wallets.</p>
+  </div>
+  </div>
+  <div class="card text-center border border-0 col-sm-12 col-md-6 col-lg-3 bg-dark">
+  <i class="fa-sharp-duotone fa-solid fa-handshake fa-float fa-2xl mx-auto p-2 mt-3" style="color: rgb(244, 118, 0); margin-bottom: 20px;"></i>
+  <div class="card-body ">
+    <h5 class="card-title mb-3 " style="color: #E27A0E;">Easy Returns</h5>
+    <p class="card-text text-light">  
+  Not happy with your order? Return it hassle-free within 3 days for a full 
+  refund or exchange.</p>
+  </div>
+  </div>
+  <div class="card text-center border border-0 col-sm-12 col-md-6 col-lg-3 bg-dark" >
+    <i class="fa-solid fa-ghost fa-float fa-2xl fa-width-auto mx-auto p-2 mt-3" style="color: rgb(244, 118, 0); margin-bottom: 20px;"></i>
+  <div class="card-body ">
+    <h5 class="card-title mb-3 " style="color: #E27A0E;">24/7 Support</h5>
+    <p class="card-text text-light">
+  Our customer support team is here around the clock to help with orders, 
+  questions, and everything in between.</p>
+  </div>
+  </div>
+</div>
+</div>
+
+<div class="container-fluid bg-dark mt3">
+  <h5 class="fw-semibold">Our Products</h5>
+  <div class="row g-2">
+    <div class="col">
+      
+    </div>
+  </div>
+</div>
+
 
 {% endblock %}
