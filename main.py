@@ -1,4 +1,5 @@
 from flask import Flask,render_template
+from database import get_cartegories
 
 app = Flask(__name__)
 
@@ -17,7 +18,9 @@ def projects():
 @app.route('/cartegories')
 def services():
 
-    return render_template('cartegories.html')
+    cartegories = get_cartegories()
+
+    return render_template('cartegories.html', cartegories=cartegories)
 
 @app.route('/about')
 def about():
