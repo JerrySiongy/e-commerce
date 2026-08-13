@@ -1,5 +1,5 @@
-from flask import Flask,render_template
-from database import get_cartegories
+from flask import Flask, render_template, request, redirect, url_for
+from database import get_cartegories, get_suppliers, insert_products, insert_suppliers
 
 app = Flask(__name__)
 
@@ -11,16 +11,59 @@ def home(): #view function
     return render_template('index.html')
 
 @app.route('/products')
-def projects():
+def products():
+    suppliers_data = get_suppliers()
 
-    return render_template('products.html')
+    return render_template('products.html', suppliers_data = suppliers_data)
+
+@app.route('/add_products', methods=['POST', 'GET'])
+def add_products():
+    if request.method == 'POST':
+        cartegory_id = request.form['cartegory_id']
+        supplier_id = request.form['supplier_id']
+        p_name = request.form['product_name']
+        unit = request.form['unit']
+        bp = request.form['buying_price']
+        sp = request.form['selling_price']
+        brand = request.form['brand']
+        size = request.form['size']
+
+        new_product = (cartegory_id,supplier_id,p_name,unit,bp,sp,brand,size)
+        insert_products(new_product)
+        print(f'new_product added')
+
+        return redirect(url_for('products'))
+        
+
+@app.route('/add_supplier', methods = ['POST', 'GET'])
+def add_supplier():
+    if request.method == 'POST':
+        name = request.form['name']
+        address = request.form['address']
+        phone_no = request.form['phone_no']
+        city = request.form['city']
+
+    new_supplier = (name,address,phone_no,city)
+
+    insert_suppliers(new_supplier)
+    print(f'new supplier added')
+
+    return redirect(url_for('dashboard'))
+
 
 @app.route('/cartegories')
 def services():
 
-    cartegories = get_cartegories()
+    cartegories_data = get_cartegories()
 
-    return render_template('cartegories.html', cartegories=cartegories)
+    return render_template('cartegories.html', cartegories_data=cartegories_data)
+
+@app.route('/dashboard')
+def dashboard():
+    suppliers_data = get_suppliers()
+    cartegories_data = get_cartegories()
+
+    return render_template('dashboard.html', cartegories_data=cartegories_data, suppliers_data=suppliers_data)
 
 @app.route('/about')
 def about():

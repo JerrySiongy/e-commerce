@@ -24,9 +24,18 @@ def get_products():
 
     return products
 
-products = get_products()
 
-print(products)
+def insert_products(product):
+    cur.execute("insert into products(cartegory_id,supplier_id,product_name,unit,buying_price,selling_price,brand,size) values(%s,%s,%s,%s,%s,%s,%s,%s)",product)
+    conn.commit()
 
-def insert_products():
-    cur.execute("insert into products")
+
+def get_suppliers():
+    cur.execute('select * from suppliers')
+    suppliers = cur.fetchall()
+
+    return suppliers
+
+def insert_suppliers(supplier):
+    cur.execute('insert into suppliers(full_name,address,phone_no,city) values(%s,%s,%s,%s)', supplier)
+    conn.commit()
