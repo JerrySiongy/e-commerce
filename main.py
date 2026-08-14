@@ -19,23 +19,23 @@ def products():
 @app.route('/add_products', methods=['POST', 'GET'])
 def add_products():
     if request.method == 'POST':
-        cartegory_id = request.form['cartegory_id']
-        supplier_id = request.form['supplier_id']
-        p_name = request.form['product_name']
+        cartegory_id = int(request.form['cartegory_id'])
+        supplier_id = int(request.form['supplier_id'])
+        product_name = request.form['product_name']
         unit = request.form['unit']
         bp = request.form['buying_price']
         sp = request.form['selling_price']
         brand = request.form['brand']
         size = request.form['size']
 
-        new_product = (cartegory_id,supplier_id,p_name,unit,bp,sp,brand,size)
+        new_product = (cartegory_id,supplier_id,product_name,unit,bp,sp,brand,size)
         insert_products(new_product)
         print(f'new_product added')
 
-        return redirect(url_for('products'))
+        return redirect(url_for('dashboard'))
         
 
-@app.route('/add_supplier', methods = ['POST', 'GET'])
+@app.route('/add_supplier', methods = ['GET', 'POST'])
 def add_supplier():
     if request.method == 'POST':
         name = request.form['name']
@@ -52,7 +52,7 @@ def add_supplier():
 
 
 @app.route('/cartegories')
-def services():
+def cartegories():
 
     cartegories_data = get_cartegories()
 

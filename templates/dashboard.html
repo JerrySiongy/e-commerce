@@ -1,5 +1,6 @@
-{% extends 'base.html' %} {% block title %} Dashboard {% endblock %} {% block
-content %}
+{% extends 'base.html' %} 
+{% block title %} Dashboard {% endblock %} 
+{% blockncontent %}
 
 <div class="container mt-5">
   <!-- Button trigger modal -->
@@ -22,13 +23,13 @@ content %}
 
               <option selected>Choose Cartegory</option>
               {% for cartegory in cartegories_data %}
-              <option  value="{{ cartegory[0][0] }}">{{ cartegory[0][1] }}</option>
+              <option  value="{{ cartegory[0] }}"><p>{{ cartegory[1] }}</p></option>
               {% endfor %}
             </select>
             <select class="form-select mt-1" aria-label="Default select example" name="supplier_id">
               {% for supplier in suppliers_data %}
               <option selected> Select Suppliers</option>
-              <option value="{{ supplier[0][0] }}">{{ supplier[0][1] }}</option>
+              <option value="{{ supplier[0] }}"><p>{{ supplier[1] }}</p></option>
               {% endfor %}
             </select>
             <div class="mb-3">
@@ -71,6 +72,7 @@ content %}
   </div>
 </div>
 </div>
+
 
 <div class="container ">
   <form action="/add_supplier" method="post">
