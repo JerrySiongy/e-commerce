@@ -13,3 +13,19 @@
     8.cartegories -> id,brand_id,cartegory_name,description
     9.products -> id, cartegory_id, supplier_id, product_name, brand, unit, buying_price, selling_price,
     10.suppliers -> id,supplier_name,address,phone_number,city
+
+
+
+
+
+**urban hotel entites**
+    1.user(id, email, password)   
+    2. customer(id, user_id, name, email, phone_no, address)              
+    3. staff(id, user_id, name, email, phone_no, role)
+    4. menu_cartegory(id, name, description)
+    5. menu_item(id,m_cat_id,name,desc,price)
+    6. order(id,customer_id,time_stamp)
+    7. order_details(id, order_id, menu_item, quantity)
+    8. payment(id, order_id, payment_method, amount,status, time_stamp)
+    9. delivery(id, staff_id, order_id, status)
+    10. review(id, customer_id, order_id, comment)
