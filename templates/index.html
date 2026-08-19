@@ -12,33 +12,82 @@
 <div class="container text-center mx-auto p-2 mt-5 mb-3">
   <div class="row">
     <div class="col flex-sm-wrap pt-5">
-      <img
-        src="{{ url_for('static', filename='landing.gif') }}"
-        alt="Welcome to our store"
-        class="landing_gif"
-      />
+      <img src="{{ url_for('static', filename='images/landing.gif') }}" alt="Welcome to our store"
+        class="landing_gif" />
     </div>
   </div>
-  <button
-    href="/products"
-    class="btn btn-primary text-light border border-0 rounded-pill p-2 px-4 fw-semibold m-3"
-    style="background-color: #e27a0e"
-  >
+  <button href="/products" class="btn btn-primary text-light border border-0 rounded-pill p-2 px-4 fw-semibold m-3"
+    style="background-color: #e27a0e">
     Shop Now
   </button>
 </div>
 
-<div class="container-fluid bg-dark pb-3 pb-3">
+<div class="container-fluid mt-3 mb-4" >
+  <h5 class='pt-3'>Brands We Offer</h5>
+  <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner " >
+      <div class="carousel-item active">
+        <div class="row g-2 mx-auto p-2">
+          <div class="col bg-light">
+            <img src="static/images/logos/adidas.jpg" style="width: 100px; height:60px;" class="card-img " alt="...">
+          </div>
+          <div class="col bg-light">
+            <img src="static/images/logos/calvin.png" style="width: 100px; height:60px;" class="card-img " alt="...">
+          </div>
+          <div class="col bg-light">
+            <img src="static/images/logos/converse.png" style="width: 100px; height:60px;" class="card-img " alt="...">
+          </div>
+          <div class="col bg-light">
+            <img src="static/images/logos/handm.png" style="width: 100px; height:60px;" class="card-img " alt="...">
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item active">
+        <div class="row g-2 mx-auto p-2">
+          <div class="col bg-light">
+            <img src="static/images/logos/levi's.jpg" style="width: 100px; height:60px;" class="card-img " alt="...">
+          </div>
+          <div class="col bg-light">
+            <img src="static/images/logos/nike.jpg" style="width: 100px; height:60px;" class="card-img " alt="...">
+          </div>
+          <div class="col bg-light">
+            <img src="static/images/logos/puma.png" style="width: 100px; height:60px;" class="card-img " alt="...">
+          </div>
+          <div class="col bg-light">
+            <img src="static/images/logos/ralph.png" style="width: 150px; height:60px;" class="card-img " alt="...">
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item active">
+        <div class="row g-2 mx-auto p-2">
+          <div class="col bg-light">
+            <img src="static/images/logos/rebook.png" style="width: 100px; height:60px;" class="card-img " alt="...">
+          </div>
+          <div class="col bg-light">
+            <img src="static/images/logos/tommy.png" style="width: 100px; height:60px;" class="card-img " alt="...">
+          </div>
+          <div class="col bg-light">
+            <img src="static/images/logos/u_armor.png" style="width: 100px; height:60px;" class="card-img " alt="...">
+          </div>
+          <div class="col bg-light">
+            <img src="static/images/logos/zara.png" style="width: 100px; height:60px;" class="card-img " alt="...">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid bg-dark mt-3 pb-3">
   <div class="row g-3 pt-2">
     <h5 class="fw-semibold text-light"> Our Cartegories</h5>
     <div class="col-sm-12 col-md-6 col-lg-3 border border-0">
       <h5 class="text-center pt-2">Men's</h5>
       <div class="card border border-0">
-        <img src="static/images/men's_c.jpg" style="width: 300; height: 200px;" class="card-img-top" alt="..." />
+        <img src="static/images/cartegories/men's_c.jpg" style="width: 300; height: 200px;" class="card-img-top"
+          alt="..." />
         <div class="card-body bg-dark border border-0">
-          <p
-            class="card-text p-1 text-light rounded text-light border border-0"
-          >
+          <p class="card-text p-1 text-light rounded text-light border border-0">
             Everyday essentials, smart fits, and standout styles for every
             occasion.
           </p>
@@ -47,12 +96,11 @@
     </div>
     <div class="col-sm-12 col-md-6 col-lg-3">
       <h5 class="text-center pt-2">Women's</h5>
-      <div class="card border border-0 " >
-        <img src="static/images/women's_c.jpg" style="width: 300; height: 200px;"  class="card-img-top" alt="..." />
+      <div class="card border border-0 ">
+        <img src="static/images/cartegories/women's_c.jpg" style="width: 300; height: 200px;" class="card-img-top"
+          alt="..." />
         <div class="card-body bg-dark border border-0">
-          <p
-            class="card-text p-1 text-light rounded text-light"
-          >
+          <p class="card-text p-1 text-light rounded text-light">
             Trendy, elegant, and comfortable fashion designed to complement your style.
           </p>
         </div>
@@ -60,12 +108,11 @@
     </div>
     <div class="col-sm-12 col-md-6 col-lg-3">
       <h5 class="text-center pt-2">Shoes</h5>
-      <div class="card border border-0" >
-        <img src="static/images/shoes_c.jpg" style="width: 300; height: 200px;" class="card-img-top" alt="..." />
+      <div class="card border border-0">
+        <img src="static/images/cartegories/shoes_c.jpg" style="width: 300; height: 200px;" class="card-img-top"
+          alt="..." />
         <div class="card-body bg-dark border border-0">
-          <p
-            class="card-text p-1 text-light rounded text-light"
-          >
+          <p class="card-text p-1 text-light rounded text-light">
             Step into comfort with sneakers, boots, heels, and everyday footwear.
           </p>
         </div>
@@ -74,11 +121,10 @@
     <div class="col-sm-12 col-md-6 col-lg-3">
       <h5 class="text-center pt-2">Accessories</h5>
       <div class="card border border-0">
-        <img src="static/images/accessories_c.jpg" style="width: 300; height: 200px;" class="card-img-top" alt="..." />
+        <img src="static/images/cartegories/accessories_c.jpg" style="width: 300; height: 200px;" class="card-img-top"
+          alt="..." />
         <div class="card-body bg-dark border border-0">
-          <p
-            class="card-text p-1 text-light rounded text-light"
-          >
+          <p class="card-text p-1 text-light rounded text-light">
             Complete your look with bags, belts, caps, watches, and more.
           </p>
         </div>
@@ -87,56 +133,46 @@
   </div>
 </div>
 
-<div class="container-fluid">
-<div class="row">
-  <div class="col">
-
-  </div>
-</div>
-</div>
 
 <div class="container mt-3">
   <div class="row g-3">
     <h5>About Us</h5>
     <div class="col-sm-12 col-md-6">
-<div class="container ">
-  <div class="card text-bg-dark border border-0 rounded">
-  <img src="static/images/about_us.jpg" class="card-img" alt="...">
-</div>
-</div>
+      <div class="container ">
+        <div class="card text-bg-dark border border-0 rounded">
+          <img src="static/images/about_us.jpg" class="card-img" alt="...">
+        </div>
+      </div>
     </div>
     <div class="col-sm-12 col-md-6 ">
       <div class="container pt-2">
         <div class="card text-center border border-0">
-  <div class="card-body border border-0">
-    
-    <p class="card-text">We believe great style should be accessible to everyone. That's why we carefully select quality clothing from trusted brands, offering fashion that combines comfort, durability, and modern design.
-</p>
-      <button type="submit"
-    class="btn btn-primary text-light border border-0 rounded-pill p-2 px-4 fw-semibold m-3"
-    style="background-color: #e27a0e"
-  ><a class="nav-link active" href="/login">Login</a>
-    
-  </button>
-</div>
-      </div>
+          <div class="card-body border border-0">
 
+            <p class="card-text">We believe great style should be accessible to everyone. That's why we carefully select
+              quality clothing from trusted brands, offering fashion that combines comfort, durability, and modern
+              design.
+            </p>
+            <button type="submit"
+              class="btn btn-primary text-light border border-0 rounded-pill p-2 px-4 fw-semibold m-3"
+              style="background-color: #e27a0e"><a class="nav-link active" href="/login">Login</a>
+
+            </button>
+          </div>
+        </div>
+
+      </div>
     </div>
   </div>
-</div>
 </div>
 
 
 <div class="container-fluid mt-3 bg-dark ">
   <h5 class="text-light pt-3">Why Shop With Us?</h5>
   <div class="row g-4 mx-2 mt-4 mb-2">
-    <div
-      class="card text-center border border-0 col-sm-12 col-md-6 col-lg-3 bg-dark"
-    >
-      <i
-        class="fa-sharp fa-solid fa-truck-fast fa-float fa-2xl mx-auto p-2 mt-3"
-        style="color: rgb(244, 118, 0); margin-bottom: 20px"
-      ></i>
+    <div class="card text-center border border-0 col-sm-12 col-md-6 col-lg-3 bg-dark">
+      <i class="fa-sharp fa-solid fa-truck-fast fa-float fa-2xl mx-auto p-2 mt-3"
+        style="color: rgb(244, 118, 0); margin-bottom: 20px"></i>
       <div class="card-body">
         <h5 class="card-title mb-3" style="color: #e27a0e">Fast Shipping</h5>
         <p class="card-text text-light">
@@ -145,13 +181,9 @@
         </p>
       </div>
     </div>
-    <div
-      class="card text-center border border-0 col-sm-12 col-md-6 col-lg-3 bg-dark"
-    >
-      <i
-        class="fa-solid fa-credit-card fa-float fa-2xl fa-2xl mx-auto p-2 mt-3"
-        style="color: rgb(244, 118, 0); margin-bottom: 20px"
-      ></i>
+    <div class="card text-center border border-0 col-sm-12 col-md-6 col-lg-3 bg-dark">
+      <i class="fa-solid fa-credit-card fa-float fa-2xl fa-2xl mx-auto p-2 mt-3"
+        style="color: rgb(244, 118, 0); margin-bottom: 20px"></i>
       <div class="card-body">
         <h5 class="card-title mb-3" style="color: #e27a0e">Secure Checkout</h5>
         <p class="card-text text-light">
@@ -160,13 +192,9 @@
         </p>
       </div>
     </div>
-    <div
-      class="card text-center border border-0 col-sm-12 col-md-6 col-lg-3 bg-dark"
-    >
-      <i
-        class="fa-sharp-duotone fa-solid fa-handshake fa-float fa-2xl mx-auto p-2 mt-3"
-        style="color: rgb(244, 118, 0); margin-bottom: 20px"
-      ></i>
+    <div class="card text-center border border-0 col-sm-12 col-md-6 col-lg-3 bg-dark">
+      <i class="fa-sharp-duotone fa-solid fa-handshake fa-float fa-2xl mx-auto p-2 mt-3"
+        style="color: rgb(244, 118, 0); margin-bottom: 20px"></i>
       <div class="card-body">
         <h5 class="card-title mb-3" style="color: #e27a0e">Easy Returns</h5>
         <p class="card-text text-light">
@@ -175,13 +203,9 @@
         </p>
       </div>
     </div>
-    <div
-      class="card text-center border border-0 col-sm-12 col-md-6 col-lg-3 bg-dark"
-    >
-      <i
-        class="fa-solid fa-ghost fa-float fa-2xl fa-width-auto mx-auto p-2 mt-3"
-        style="color: rgb(244, 118, 0); margin-bottom: 20px"
-      ></i>
+    <div class="card text-center border border-0 col-sm-12 col-md-6 col-lg-3 bg-dark">
+      <i class="fa-solid fa-ghost fa-float fa-2xl fa-width-auto mx-auto p-2 mt-3"
+        style="color: rgb(244, 118, 0); margin-bottom: 20px"></i>
       <div class="card-body">
         <h5 class="card-title mb-3" style="color: #e27a0e">24/7 Support</h5>
         <p class="card-text text-light">

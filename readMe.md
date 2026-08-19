@@ -29,3 +29,29 @@
     8. payment(id, order_id, payment_method, amount,status, time_stamp)
     9. delivery(id, staff_id, order_id, status)
     10. review(id, customer_id, order_id, comment)
+
+
+
+    NAVBAR
+   ↓
+4-SLIDE HERO VIDEO/GIF
+   ↓
+FEATURED CATEGORIES
+   ↓
+FEATURED PRODUCTS
+   ↓
+WHY SHOP WITH US?
+   ↓
+POPULAR BRANDS
+   ↓
+NEW ARRIVALS
+   ↓
+BEST SELLERS
+   ↓
+PROMOTIONAL BANNER
+   ↓
+CUSTOMER REVIEWS
+   ↓
+NEWSLETTER
+   ↓
+FOOTER

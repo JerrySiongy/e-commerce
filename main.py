@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for
-from database import get_cartegories, get_suppliers, insert_products, insert_suppliers
+from database import get_cartegories, get_suppliers, insert_products, insert_suppliers, get_mensprods
 
 app = Flask(__name__)
 
