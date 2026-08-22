@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for
-from database import get_cartegories, get_suppliers, insert_products, insert_suppliers, get_mensprods
+from database import get_cartegories, get_suppliers, insert_products, insert_suppliers, get_products,get_mensprods
 
 app = Flask(__name__)
 
@@ -13,8 +13,8 @@ def home(): #view function
 @app.route('/products')
 def products():
     suppliers_data = get_suppliers()
-
-    return render_template('products.html', suppliers_data = suppliers_data)
+    products_data = get_products()
+    return render_template('products.html', suppliers_data = suppliers_data, products_data=products_data)
 
 @app.route('/add_products', methods=['POST', 'GET'])
 def add_products():
@@ -51,12 +51,12 @@ def add_supplier():
     return redirect(url_for('dashboard'))
 
 
-@app.route('/cartegories')
-def cartegories():
+@app.route('/shop')
+def shop():
 
     cartegories_data = get_cartegories()
 
-    return render_template('cartegories.html', cartegories_data=cartegories_data)
+    return render_template('shop.html', cartegories_data=cartegories_data)
 
 @app.route('/dashboard')
 def dashboard():
