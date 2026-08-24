@@ -55,8 +55,8 @@ def add_supplier():
 def shop():
 
     cartegories_data = get_cartegories()
-
-    return render_template('shop.html', cartegories_data=cartegories_data)
+    products_data=get_products
+    return render_template('shop.html', cartegories_data=cartegories_data, products_data=products_data)
 
 @app.route('/dashboard')
 def dashboard():
