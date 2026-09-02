@@ -5,39 +5,48 @@ from datetime import datetime
 today = datetime.now()
 
 
-conn = psycopg2.connect(host="localhost", port=5432, user="postgres", password="@Lion2020",dbname="ecommerce"
-)
+conn = psycopg2.connect(host="localhost", port=5432, user="postgres", password="@Lion2020", dbname="ecommerce"
+                        )
 
-#perform db operations
+# perform db operations
 
 cur = conn.cursor()
+
 
 def get_cartegories():
     cur.execute("select * from cartegories")
     cartegories = cur.fetchall()
-    
+
     return cartegories
+
 
 def get_mensprods():
     cur.execute('select * from products where cartegory_id=1;')
     mensprods = cur.fetchall
 
     return mensprods
+
+
 def get_shoesprods():
     cur.execute('select * from products where cartegory_id=3;')
     mensprods = cur.fetchall
 
     return mensprods
+
+
 def get_womensprods():
     cur.execute('select * from products where cartegory_id=2;')
     mensprods = cur.fetchall
 
     return mensprods
+
+
 def get_accessoriesprods():
     cur.execute('select * from products where cartegory_id=4;')
     mensprods = cur.fetchall
 
     return mensprods
+
 
 def get_products():
     cur.execute("select * from products")
@@ -47,7 +56,7 @@ def get_products():
 
 
 def insert_products(product):
-    cur.execute("insert into products(cartegory_id,supplier_id,product_name,unit,buying_price,selling_price,brand,size) values(%s,%s,%s,%s,%s,%s,%s,%s)",product)
+    cur.execute("insert into products(cartegory_id,supplier_id,product_name,unit,buying_price,selling_price,brand,size) values(%s,%s,%s,%s,%s,%s,%s,%s)", product)
     conn.commit()
 
 
@@ -59,5 +68,29 @@ def get_suppliers():
 
 
 def insert_suppliers(supplier):
-    cur.execute('insert into suppliers(full_name,address,phone_no,city) values(%s,%s,%s,%s)', supplier)
+    cur.execute(
+        'insert into suppliers(full_name,address,phone_no,city) values(%s,%s,%s,%s)', supplier)
     conn.commit()
+
+
+def get_unit():
+    cur.execute("select unit from products")
+    unit = cur.fetchall()
+
+    return unit
+
+# units = get_unit()
+
+# print(units)
+
+
+def insert_user(user_details):
+    cur.execute('insert into users(name, email,address, phone_number, password) values(%s,%s,%s,%s,%s)', user_details)
+    conn.commit()
+
+
+def check_existing_user(email):
+    cur.execute('select * from users where email = %s', (email,))
+    user = cur.fetchone()
+
+    return user

@@ -1,39 +1,87 @@
 {% extends 'base.html' %}
-{% block  title %} shop {% endblock %}
+{% block title %} shop {% endblock %}
 {% block content %}
 
 
 
 <div class="container-fluid mt-5 pt-5">
-    <h5>Hot picks</h5>
+    <h5 class="fw-bold text-center fs-2"><i class="fa-solid fa-fire fa-float fa-2xl mx-3" style="color: #e27a0e;"></i>
+        Hot picks</h5>
+
+
 </div>
 
 <div class="container-fluid mt-5 ">
-    <h5>Men's collection</h5>
+    <h5 class="fw-bold ">Men's collection</h5>
 </div>
 
 <div class="container-fluid mt-5">
-    <h5>Featured products</h5>
+    <h5 class="text-center fw-bold fs-2"><i class="fa-solid fa-tag fa-float fa-2xl mx-3"
+            style="color: #e27a0e;"></i>Featured products</h5>
+
 </div>
 
 <div class="container-fluid mt-5 ">
-    <h5>Women's collection</h5>
+    <h5 class="fw-bold ">Women's collection</h5>
 </div>
 
 <div class="container-fluid mt-5 ">
-    <h5>Trending</h5>
+    <h5 class="text-center fs-2 fw-bold"><i class="fa-solid fa-tower-broadcast fa-float fa-2xl mx-3"
+            style="color: #e27a0e;"></i>Trending</h5>
 </div>
 
 <div class="container-fluid mt-5 ">
-    <h5>Shoes</h5>
+    <h5 class="fw-bold ">Shoes</h5>
+
+    <div class="container">
+        <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row g-2">
+                        <div class="col-sm-12 col-md-6 col-lg-3">
+                            <div class="card">
+                                <img src="static/images/shoes/adizero.jpeg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <form>
+                                        <h5 class="">Nike</h5>
+                                        <p>Classic Adizero</p>
+                                        <p class="fw-semibold">KSH 3500</p>
+                                        <p class=""><small class="text-body-secondary">12 units left</small></p>
+                                        <button href="/products"
+                                            class="btn btn-primary text-light border border-0 rounded-pill  px-4 fw-semibold mx-auto p-2"
+                                            style="background-color: #e27a0e">
+                                            Add to cart
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
 </div>
 
 <div class="container-fluid mt-5 ">
-    <h5>Accessories</h5>
+    <h5 class="fw-bold ">Accessories</h5>
 </div>
 
 <div class="container mt-5">
     <p>{{ cartegories_data[1][1] }}</p>
+</div>
+
+<div class="container">
+    <p>{{ unit_data }}</p>
 </div>
 
 {% endblock %}
