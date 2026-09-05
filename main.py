@@ -114,7 +114,7 @@ def register():
         if not existing_user:
             hashed_password = bcrypt.generate_password_hash(password).decode(
                 'utf-8')  # compares the password with the hashed password in database
-            new_user = (name, email, phone_number, address, hashed_password)
+            new_user = (name, email, address, phone_number,hashed_password)
             insert_user(new_user)
             print('user registered successfully')
             return redirect(url_for("login"))
