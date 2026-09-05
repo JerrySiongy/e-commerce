@@ -1,3 +1,6 @@
+document.getElementById("cart").addEventListener("click", function (event) {
+event.preventDefault() // a funtion that prevents the default behaviour of the browser after an event occurs
+
 let cart =
   document.querySelectorAll(
     ".add-cart",
@@ -50,7 +53,7 @@ let products = [
     inCart: 0,
   },
   {
-    name: "shoes/dg",
+    name: "dg",
     price: 3500,
     inCart: 0,
   },
@@ -275,3 +278,5 @@ parentElement.addEventListener('click', (e) =>{
 
 onLoadCartNumbers();
 displayCart();
+
+})

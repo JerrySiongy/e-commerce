@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for
-from database import get_cartegories, get_suppliers, insert_products, insert_suppliers, get_products, get_mensprods, get_unit, check_existing_user, insert_user
+from database import get_cartegories, get_suppliers, insert_products, insert_suppliers, get_products, get_mensprods, get_stocks, check_existing_user, insert_user
 
 
 # to encrypt email and password
@@ -67,10 +67,10 @@ def add_supplier():
 
 @app.route('/shop')
 def shop():
-    unit_data = get_unit()
+    stock_data = get_stocks()
     cartegories_data = get_cartegories()
     products_data = get_products
-    return render_template('shop.html', cartegories_data=cartegories_data, products_data=products_data, unit_data=unit_data)
+    return render_template('shop.html', cartegories_data=cartegories_data, products_data=products_data, stock_data=stock_data)
 
 
 @app.route('/dashboard')
@@ -95,7 +95,7 @@ def cart():
 
 @app.route('/units')
 def units():
-    unit_data = get_unit()
+    unit_data = get_stocks()
 
     return render_template('shop.html', unit_data=unit_data)
 

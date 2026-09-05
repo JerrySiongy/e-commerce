@@ -73,15 +73,22 @@ def insert_suppliers(supplier):
     conn.commit()
 
 
-def get_unit():
-    cur.execute("select unit from products")
+def get_stocks():
+    cur.execute("select * from stocks")
     unit = cur.fetchall()
 
     return unit
 
-# units = get_unit()
+#stock = get_stocks()
 
-# print(units)
+#print(stock))
+
+def add_stocks():
+    cur.execute()
+
+
+def check_available_stock():
+    cur.execute()    
 
 
 def insert_user(user_details):
