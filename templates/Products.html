@@ -1,141 +1,127 @@
-{% extends 'base.html' %}
-{% block title %} products {% endblock %}
-{% block content %}
+{% extends 'base.html' %} {% block title %} products {% endblock %} {% block
+content %}
 
+<div class="container-fluid mt-5 p-5">this is the projects page</div>
 
-<div class="container-fluid mt-5 p-5">
-	this is the projects page
-</div>
-
-<div class="container ">
-	<div class=" container app-container">
+<div class="container">
+	<div class="container app-container">
 		<div class="app-bg">
 			<div class="left-side"></div>
 			<div class="right-side"></div>
 		</div>
 
-
 		<div class="shopping-bag">
 			<a href="/cart.html">
-				<img src="static/images/icons/bag.png" alt="cart">
+				<img src="static/images/icons/bag.png" alt="cart" />
 				Cart
-				<div class="total-items-in-cart">
-					0
-				</div>
+				<div class="total-items-in-cart">0</div>
 			</a>
 		</div>
 
-		
-			<div class="container content">
-				<div class="products-preview">
-					<div class="products-container">
-						<div class="container-fluid bg-dark mt-3 pb-3">
-							<h5 class=" pt-3">Featured products</h5>
-							<p class="text-light">Discover our most popular picks</p>
-							<div class="row g-2">
-								<div class="col-sm-12 col-md-6 col-lg-3">
-									<div class="card">
-										<img src="static/images/shirts/t1.png" alt="t-shirt 1">
-										<div class="card-body">
-											<div class="item">
-												<div class="item-container">
-
-													<div class="desc">
-														<h2>T-shirt 1</h2>
-														<h2><small>$</small>29.99</h2>
-														<p>
-															Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-															Ipsum, dicta!
-														</p>
-													</div>
-													<div class="add-to-wishlist">
-														<img src="static/images/icons/heart.png" alt="add to wish list">
+		<div class="container  content">
+			<div class="products-preview">
+				<div class="products-container">
+					<div class="container-fluid bg-dark mt-3 pb-3">
+						<h5 class="pt-3">Featured products</h5>
+						<p class="text-light">Discover our most popular picks</p>
+						<div class="row g-2">
+							<div class="col-sm-12 col-md-6 col-lg-3">
+								<div class="card">
+									<img src="static/images/shirts/t1.png" alt="t-shirt 1" />
+									<div class="card-body">
+										<div class="item">
+											<div class="item-container">
+												<div class="desc">
+													<h2>T-shirt 1</h2>
+													<h2><small>$</small>29.99</h2>
+													<p>
+														Lorem ipsum dolor, sit amet consectetur adipisicing
+														elit. Ipsum, dicta!
+													</p>
+												</div>
+												<div class="add-to-wishlist">
+													<img src="static/images/icons/heart.png" alt="add to wish list" />
+												</div>
+												<div class="add-to-cart">
+													<img src="static/images/icons/bag-plus.png" alt="add to cart" />
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-12 col-md-6 col-lg-3">
+								<div class="card">
+									<img src="static/images/shirts/t2.png" alt="t-shirt 1" />
+									<div class="card-body">
+										<div class="item">
+											<div class="item-container">
+												<div class="desc">
+													<h2>T-shirt 1</h2>
+													<h2><small>$</small>29.99</h2>
+													<p>
+														Lorem ipsum dolor, sit amet consectetur adipisicing
+														elit. Ipsum, dicta!
+													</p>
+												</div>
+												<div class="card-body p-0">
+													<div class="add-to-wishlist w-25">
+														<img src="static/images/icons/heart.png"
+															alt="add to wish list" />
 													</div>
 													<div class="add-to-cart">
-														<img src="static/images/icons/bag-plus.png" alt="add to cart">
+														<img src="static/images/icons/bag-plus.png" alt="add to cart" />
 													</div>
 												</div>
 											</div>
 										</div>
 									</div>
 								</div>
-								<div class="col-sm-12 col-md-6 col-lg-3">
-									<div class="card">
-										<img src="static/images/shirts/t2.png" alt="t-shirt 1">
-										<div class="card-body">
-											<div class="item">
-												<div class="item-container">
-
-													<div class="desc">
-														<h2>T-shirt 1</h2>
-														<h2><small>$</small>29.99</h2>
-														<p>
-															Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-															Ipsum, dicta!
-														</p>
-													</div>
-													<div class="card-body p-0">
-														<div class="add-to-wishlist w-25 ">
-															<img src="static/images/icons/heart.png"
-																alt="add to wish list">
-														</div>
-														<div class="add-to-cart ">
-															<img src="static/images/icons/bag-plus.png"
-																alt="add to cart">
-														</div>
-													</div>
+							</div>
+							<div class="col-sm-12 col-md-6 col-lg-3">
+								<div class="card">
+									<img src="static/images/shirts/t3.png" alt="t-shirt 1" />
+									<div class="card-body">
+										<div class="item">
+											<div class="item-container">
+												<div class="desc">
+													<h2>T-shirt 1</h2>
+													<h2><small>$</small>29.99</h2>
+													<p>
+														Lorem ipsum dolor, sit amet consectetur adipisicing
+														elit. Ipsum, dicta!
+													</p>
+												</div>
+												<div class="add-to-wishlist">
+													<img src="static/images/icons/heart.png" alt="add to wish list" />
+												</div>
+												<div class="add-to-cart">
+													<img src="static/images/icons/bag-plus.png" alt="add to cart" />
 												</div>
 											</div>
 										</div>
 									</div>
 								</div>
-								<div class="col-sm-12 col-md-6 col-lg-3">
-									<div class="card">
-										<img src="static/images/shirts/t3.png" alt="t-shirt 1">
-										<div class="card-body">
-											<div class="item">
-												<div class="item-container">
-
-													<div class="desc">
-														<h2>T-shirt 1</h2>
-														<h2><small>$</small>29.99</h2>
-														<p>
-															Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-															Ipsum, dicta!
-														</p>
-													</div>
-													<div class="add-to-wishlist">
-														<img src="static/images/icons/heart.png" alt="add to wish list">
-													</div>
-													<div class="add-to-cart">
-														<img src="static/images/icons/bag-plus.png" alt="add to cart">
-													</div>
+							</div>
+							<div class="col-sm-12 col-md-6 col-lg-3">
+								<div class="card">
+									<img src="static/images/shirts/t4.png" alt="t-shirt 1" />
+									<div class="card-body">
+										<div class="item">
+											<div class="item-container">
+												<div class="desc">
+													<h2>T-shirt 1</h2>
+													<h2><small>$</small>29.99</h2>
+													<p>
+														Lorem ipsum dolor, sit amet consectetur adipisicing
+														elit. Ipsum, dicta!
+													</p>
 												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-12 col-md-6 col-lg-3">
-									<div class="card">
-										<img src="static/images/shirts/t4.png" alt="t-shirt 1">
-										<div class="card-body">
-											<div class="item">
-												<div class="item-container">
-
-													<div class="desc">
-														<h2>T-shirt 1</h2>
-														<h2><small>$</small>29.99</h2>
-														<p>
-															Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-															Ipsum, dicta!
-														</p>
-													</div>
-													<div class="add-to-wishlist">
-														<img src="static/images/icons/heart.png" alt="add to wish list">
-													</div>
-													<div class="add-to-cart">
-														<img src="static/images/icons/bag-plus.png" alt="add to cart">
-													</div>
+												<div class="add-to-wishlist">
+													<img src="static/images/icons/heart.png" alt="add to wish list" />
+												</div>
+												<div class="add-to-cart">
+													<img src="static/images/icons/bag-plus.png" alt="add to cart" />
 												</div>
 											</div>
 										</div>
@@ -146,83 +132,110 @@
 					</div>
 				</div>
 			</div>
-		
+		</div>
 	</div>
-	<div class="container products-list mt-5">
-		<div class="container products">
+	<div class="container  products-list mt-5">
+		<div class="container  products">
 			<!-- render porducts here -->
 			<div class="item">
 				<div class="item-container item-img">
-					<div class="card" >
-						<img src="static/images/shirts/t1.png" alt="t-shirt 1">
+					<div class="card">
+						<img src="static/images/shirts/t1.png" alt="t-shirt 1" />
 						<div class="card-body">
 							<h5 class="card-title">Card title</h5>
-							<p class="card-text">Some quick example text to build on the card title and make up the bulk
-								of the card's content.</p>
+							<div class="desc">
+								<ul class="list-group list-group-flush">
+									<li class="list-group-item">
+										<h2>T-shirt 1</h2>
+									</li>
+									<li>
+										<h2><small>$</small>29.99</h2>
+									</li>
+								</ul>
+							</div>
 						</div>
-						<div class="desc">
-							<ul class="list-group list-group-flush">
-								<li class="list-group-item">
-									<h2>T-shirt 1</h2>
-								</li>
-								<li>
-									<h2><small>$</small>29.99</h2>
-								</li>
-							</ul>
-						</div>
+
 						<div class="card-body">
 							<a href="#" class="card-link">Card link</a>
 							<a href="#" class="card-link">Another link</a>
 						</div>
 					</div>
-
-
-
-
 					<div class="add-to-wishlist">
-						<img src="static/images/icons/heart.png" alt="add to wish list">
+						<img src="static/images/icons/heart.png" alt="add to wish list" />
 					</div>
 					<div class="add-to-cart">
-						<img src="static/images/icons/bag-plus.png" alt="add to cart">
+						<img src="static/images/icons/bag-plus.png" alt="add to cart" />
 					</div>
 				</div>
 			</div>
 		</div>
+
+
 		<div class="container cart">
-			<div class="cart-header">
-				<div class="column1">Item</div>
-				<div class="column2">Unit price</div>
-				<div class="column3">Units</div>
-			</div>
-			<div class="cart-items">
-				<!-- render cart items here -->
-				<div class="cart-item">
-					<div class="item-info">
-						<img src="static/images/shirts/t1.png" alt="t-shirt 1">
-						<h4>T-shirt 1</h4>
+			<table class="table">
+				<thead>
+					<div class="cart-header">
+						<tr>
+							<th scope="col">#</th>
+							<th scope="col">
+								<div class="column1">Item</div>
+							</th>
+							<th scope="col">
+								<div class="column2">Unit price</div>
+							</th>
+							<th scope="col">
+								<div class="column3">Units</div>
+							</th>
+						</tr>
 					</div>
-					<div class="unit-price">
-						<small>$</small>29.99
+				</thead>
+				<tbody>
+					<div class="cart-items">
+						<div class="cart-item">
+							<tr>
+								<th scope="row">1</th>
+								<td>
+									<div class="item-info">
+										<div class="card border border-0" style="width: 50px; height: 65px;">
+											<img src="static/images/shirts/t1.png" alt="t-shirt 1" />				
+										</div>
+										<div class="card-body">
+												<p class="card-text">T-shirt 1</p>
+											</div>
+									</div>
+								</td>
+								<td>
+									<div class="unit-price"><small>$</small>29.99</div>
+								</td>
+								<td>
+									<div class="units">
+										
+										<p class="number"><span class="btn minus">-</span>1<span class="btn plus">+</span></p>
+										
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<p>Totals</p>
+								</td>
+								<td>
+									<div class="cart-footer">
+										<div class="subtotal">Subtotal (0 items): $0</div>
+									</div>
+								</td>
+								<td>
+									<div class="cart-footer">
+										<div class="checkout">checkout</div>
+									</div>
+								</td>
+							</tr>
+						</div>
 					</div>
-					<div class="units">
-						<div class="btn minus">-</div>
-						<div class="number">1</div>
-						<div class="btn plus">+</div>
-					</div>
-				</div>
-			</div>
-			<div class="cart-footer">
-				<div class="subtotal">
-					Subtotal (0 items): $0
-				</div>
-				<div class="checkout">
-					Proceed to checkout
-				</div>
-			</div>
+				</tbody>
+			</table>
 		</div>
 	</div>
-
-
 </div>
 
 {% endblock %}
