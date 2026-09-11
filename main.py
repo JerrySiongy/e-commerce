@@ -35,14 +35,12 @@ def add_products():
         cartegory_id = int(request.form['cartegory_id'])
         supplier_id = int(request.form['supplier_id'])
         product_name = request.form['product_name']
-        unit = request.form['unit']
         bp = request.form['buying_price']
         sp = request.form['selling_price']
         brand = request.form['brand']
         size = request.form['size']
-
         new_product = (cartegory_id, supplier_id,
-                       product_name, unit, bp, sp, brand, size)
+                       product_name, bp, sp, brand, size)
         insert_products(new_product)
         print(f'new_product added')
 
@@ -80,25 +78,21 @@ def dashboard():
 
     return render_template('dashboard.html', cartegories_data=cartegories_data, suppliers_data=suppliers_data)
 
-
 @app.route('/about')
 def about():
 
     return render_template('about.html')
-
 
 @app.route('/cart')
 def cart():
 
     return render_template('cart.html')
 
-
 @app.route('/units')
 def units():
     unit_data = get_stocks()
 
     return render_template('shop.html', unit_data=unit_data)
-
 
 @app.route('/register',methods=['GET', 'POST'])
 def register():
@@ -151,6 +145,5 @@ def login():
 def contact_us():
 
     return render_template('contact_us.html')
-
 
 app.run(debug=True)
