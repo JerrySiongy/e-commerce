@@ -56,7 +56,7 @@ def get_products():
 
 
 def insert_products(product):
-    cur.execute("insert into products(cartegory_id,supplier_id,product_name,unit,buying_price,selling_price,brand,size) values(%s,%s,%s,%s,%s,%s,%s,%s)", product)
+    cur.execute("insert into products(cartegory_id,supplier_id,product_name,buying_price,selling_price,brand,size) values(%s,%s,%s,%s,%s,%s,%s)", product)
     conn.commit()
 
 
@@ -95,6 +95,13 @@ def insert_user(user_details):
     cur.execute('insert into users(name, email,address, phone_number, password) values(%s,%s,%s,%s,%s)', user_details)
     conn.commit()
 
+def insert_sale(sale):
+    cur.execute("insert into sales(pid,quantity) values(%s,%s)",sale)
+    conn.commit()
+
+#sale1 = (7,2)
+
+#insert_sale(sale1)
 
 def check_existing_user(email):
     cur.execute('select * from users where email = %s', (email,))

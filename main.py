@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for
-from database import get_cartegories, get_suppliers, insert_products, insert_suppliers, get_products, get_mensprods, get_stocks, check_existing_user, insert_user
+from database import get_cartegories, get_suppliers, insert_products, insert_suppliers, get_products, get_mensprods, get_stocks, check_existing_user, insert_user,insert_sale
 
 
 # to encrypt email and password
@@ -145,5 +145,29 @@ def login():
 def contact_us():
 
     return render_template('contact_us.html')
+
+
+@app.route('/sales')
+def sales():  # view function
+
+    products_data = get_products() # inorder to show products data in the sales page
+
+    return render_template("sales.html", products_data=products_data)
+
+
+@app.route('/make_sale', methods=['GET', 'POST'])
+def make_sale():
+    if request.method == 'POST':
+        
+        pid = request.form['pid']
+        quantity = request.form['quantity']
+
+        new_sale = (pid,quantity)
+        insert_sale(new_sale)
+
+    return redirect(url_for("sales"))
+
+
+
 
 app.run(debug=True)

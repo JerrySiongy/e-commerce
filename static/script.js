@@ -16,7 +16,7 @@ function renderProducts() {
 							<div class="desc">
 								<ul class="list-group list-group-flush">
 									<li class="list-group-item">
-										<h2>T-shirt 1</h2>
+										<h2>${product.name}</h2>
 									</li>
 									<li>
 										<h2><small>$</small>29.99</h2>
@@ -92,27 +92,29 @@ function renderCartItems(){
 	cartItemsEl.innerHTML =""; //clear cart element
 	cart.forEach((item) =>{
 		cartItemsEl.innerHTML += `
-		<div class="cart-item">
+		<div class="cart-item" >
 						<tr>
-							<th scope="row">1</th>
+							<th scope="row" name="pid" id="product_id">${item.id}</th>
+							<input type="hidden" name="pid" id="product_id" value="${item.id}">
 							<td>
 								<div class="item-info" onclick ="removeCartItem(${item.id})">
 									<div class="card border border-0" style="width: 50px; height: 65px;">
 										<img src="${item.imgSrc}" alt="${item.name}" />
 									</div>
 									<div class="card-body">
-										<p class="card-text">${item.name}</p>
+										<p class="card-text" name="product_name">${item.name}</p>
 									</div>
 								</div>
 							</td>
 							<td>
-								<div class="unit-price"><small>$</small>${item.price}</div>
+								<div class="unit-price" name="product_price"><small>$</small>${item.price}</div>
 							</td>
 							<td>
 								<div class="units">
 
-									<p class="number"><span class="btn minus" onclick="changeNumberOfUnits('minus',${item.id})">-</span>${item.numberOfUnits}
+									<p class="number" name="quantity" id="quantity"><span class="btn minus" onclick="changeNumberOfUnits('minus',${item.id})" >-</span>${item.numberOfUnits}
 									<span class="btn plus" onclick="changeNumberOfUnits('plus', ${item.id})">+</span></p>
+									<input type="hidden" name="quantity" id="quantity" value="${item.numberOfUnits}">
 								</div>
 							</td>
 						</tr>
