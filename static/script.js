@@ -6,9 +6,9 @@ const totalItemsInCartEl = document.querySelector(".total-items-in-cart");
 
 //render products
 function renderProducts() {
-    products.forEach((product) => {
-        productsEl.innerHTML += `
-        <div class="item m-2">
+	products.forEach((product) => {
+		productsEl.innerHTML += `
+        <div class="col-sm-12 col-md-3 item m-2">
 			<div class="item-container item-img">
 				<div class="card">
 					<img src="${product.imgSrc}" alt="${product.name}" />
@@ -39,46 +39,46 @@ function renderProducts() {
 			</div>
 		</div>
         `;
-    });
+	});
 }
 
 renderProducts();
 
 //cart array
-let cart =JSON.parse(localStorage.getItem("CART")) || [] ;
+let cart = JSON.parse(localStorage.getItem("CART")) || [];
 updateCart();
 
 // add to cart
-function addToCart(id){
+function addToCart(id) {
 	//check if product already exists in cart
-	if(cart.some((item) => item.id === id )){
+	if (cart.some((item) => item.id === id)) {
 		changeNumberOfUnits("plus", id)
-	}else{
+	} else {
 		const item = products.find((product) => product.id === id)
-	cart.push({
-		...item,
-		numberOfUnits : 1
-	});
+		cart.push({
+			...item,
+			numberOfUnits: 1
+		});
 	}
 
-updateCart();
+	updateCart();
 }
 
 //update cart
 
-function updateCart(){
+function updateCart() {
 	renderCartItems();
 	renderSubTotal();
 
 	//save cart to local storage
-	localStorage.setItem("CART", JSON.stringify(cart)); 
+	localStorage.setItem("CART", JSON.stringify(cart));
 }
 
 //calculate and render subtotal
-function renderSubTotal(){
+function renderSubTotal() {
 	let totalPrice = 0, totalItems = 0;
 
-	cart.forEach((item) =>{
+	cart.forEach((item) => {
 		totalPrice += item.price * item.numberOfUnits;
 		totalItems += item.numberOfUnits;
 	});
@@ -88,9 +88,9 @@ function renderSubTotal(){
 }
 
 //render Cart items
-function renderCartItems(){
-	cartItemsEl.innerHTML =""; //clear cart element
-	cart.forEach((item) =>{
+function renderCartItems() {
+	cartItemsEl.innerHTML = ""; //clear cart element
+	cart.forEach((item) => {
 		cartItemsEl.innerHTML += `
 		<div class="cart-item" >
 						<tr>
@@ -120,12 +120,12 @@ function renderCartItems(){
 						</tr>
 					</div>
 		`
-	});	
+	});
 }
 
 //remove item from cart
-function removeCartItem(id){
-	cart = cart.filter((item) => item.id !== id );
+function removeCartItem(id) {
+	cart = cart.filter((item) => item.id !== id);
 
 	updateCart();
 
@@ -133,16 +133,16 @@ function removeCartItem(id){
 
 
 //change number of units for an item
-function changeNumberOfUnits(action, id){
-	cart = cart.map((item) =>{
+function changeNumberOfUnits(action, id) {
+	cart = cart.map((item) => {
 
 		let numberOfUnits = item.numberOfUnits;
 
-		if(item.id === id){
-			if(action ==="minus" && numberOfUnits > 1){
-				numberOfUnits --;
-			}else if(action === "plus" && numberOfUnits < item.instock){
-				numberOfUnits ++;
+		if (item.id === id) {
+			if (action === "minus" && numberOfUnits > 1) {
+				numberOfUnits--;
+			} else if (action === "plus" && numberOfUnits < item.instock) {
+				numberOfUnits++;
 			}
 		}
 		return {
