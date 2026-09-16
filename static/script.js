@@ -11,7 +11,7 @@ function renderProducts() {
         <div class="col-sm-12 col-md-3 item m-2">
 			<div class="item-container item-img">
 				<div class="card">
-					<img src="${product.imgSrc}" alt="${product.name}" />
+					<img src="${product.imgSrc}" style="height:290px;" alt="${product.name}" />
 						<div class="card-body">
 							<div class="desc">
 								<ul class="list-group list-group-flush">
@@ -19,14 +19,14 @@ function renderProducts() {
 										<h2>${product.name}</h2>
 									</li>
 									<li>
-										<h2><small>$</small>29.99</h2>
+										<h2><small>$</small>${product.price}</h2>
 									</li>
 								</ul>
 							</div>
 						</div>
 
 						<div class="card-body">
-							<a href="#" class="card-link">Card link</a>
+							<a href="#" class="card-link"><small>$</small>${product.price}</a>
 							<a href="#" class="card-link">Another link</a>
 						</div>
 				</div>
