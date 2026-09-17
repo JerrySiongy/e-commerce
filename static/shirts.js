@@ -16,25 +16,21 @@ function renderProducts() {
 							<div class="desc">
 								<ul class="list-group list-group-flush">
 									<li class="list-group-item">
-										<h2>${product.name}</h2>
+										<p>${product.name}</p>
 									</li>
 									<li>
-										<h2><small>$</small>${product.price}</h2>
+										<p style="color:black;">${product.description}</p>
 									</li>
 								</ul>
 							</div>
 						</div>
-
 						<div class="card-body">
-							<a href="#" class="card-link"><small>$</small>${product.price}</a>
-							<a href="#" class="card-link">Another link</a>
+							<a href="#" class="card-link">Price: <small>$</small>${product.price}</a>
+							<a href="#" class="card-link">In stock: ${product.instock}</a>
 						</div>
 				</div>
-				<div class="add-to-wishlist">
-						<img src="static/images/icons/heart.png" alt="add to wish list" />
-				</div>
 				<div class="add-to-cart" onclick ="addToCart(${product.id})" >
-						<img src="static/images/icons/bag-plus.png" alt="add to cart" />
+						<img src="static/images/icons/bag-plus.png" alt="add to cart"/>
 				</div>
 			</div>
 		</div>
