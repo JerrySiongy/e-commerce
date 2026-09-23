@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for
-from database import get_cartegories, get_suppliers, insert_products, insert_suppliers, get_products, get_mensprods, get_stocks, check_existing_user, insert_user,insert_sale
+from database import get_cartegories, get_suppliers, insert_products, insert_suppliers, get_products, get_mensprods, get_stocks, check_existing_user, insert_user,insert_sale, check_available_stock
 
 
 # to encrypt email and password
@@ -38,9 +38,8 @@ def add_products():
         bp = request.form['buying_price']
         sp = request.form['selling_price']
         brand = request.form['brand']
-        size = request.form['size']
         new_product = (cartegory_id, supplier_id,
-                       product_name, bp, sp, brand, size)
+                       product_name, bp, sp, brand)
         insert_products(new_product)
         print(f'new_product added')
 

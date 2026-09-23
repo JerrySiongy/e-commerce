@@ -56,7 +56,7 @@ def get_products():
 
 
 def insert_products(product):
-    cur.execute("insert into products(cartegory_id,supplier_id,product_name,buying_price,selling_price,brand,size) values(%s,%s,%s,%s,%s,%s,%s)", product)
+    cur.execute("insert into products(cartegory_id,supplier_id,product_name,buying_price,selling_price,brand) values(%s,%s,%s,%s,%s,%s)", product)
     conn.commit()
 
 
@@ -82,6 +82,15 @@ def get_stocks():
 #stock = get_stocks()
 
 #print(stock))
+def check_available_stock(pid):
+    cur.execute('select sum(stock_quantity) from stock where pid= %s', (pid,))
+    total_stock = cur.fetchone()[0] or 0
+
+    cur.execute("select sum(quantity) from sales where pid = %s",(pid,))
+    total_sold = cur.fetchone()[0] or 0
+
+    return total_stock - total_sold
+
 
 def add_stocks():
     cur.execute()

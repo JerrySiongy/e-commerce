@@ -1,14 +1,15 @@
 //select elements
-const shoesEl = document.querySelector(".shoes");
+const productsEl = document.querySelector(".products");
+
 
 //render products
 function renderProducts() {
-	shoes.forEach((product) => {
-		shoesEl.innerHTML += `
-        <div class="col-sm-12  col-md-3  item">
+	products.forEach((product) => {
+		productsEl.innerHTML += `
+        <div class="col-sm-12 col-md-3 item">
 			<div class="item-container item-img">
 				<div class="card">
-					<img src="${product.imgSrc}"   alt="${product.name}" />
+					<img src="${product.imgSrc}" style="height:290px;" alt="${product.name}" />
 						<div class="card-body">
 							<div class="desc">
 								<ul class="list-group list-group-flush">
@@ -21,14 +22,13 @@ function renderProducts() {
 								</ul>
 							</div>
 						</div>
-
 						<div class="card-body">
 							<a href="#" class="card-link">Price: <small>$</small>${product.price}</a>
 							<a href="#" class="card-link">In stock: ${product.instock}</a>
 						</div>
 				</div>
 				<div class="add-to-cart" onclick ="addToCart(${product.id})" >
-						<img src="static/images/icons/bag-plus.png" alt="add to cart" />
+						<img src="static/images/icons/bag-plus.png" alt="add to cart"/>
 				</div>
 			</div>
 		</div>
@@ -37,4 +37,3 @@ function renderProducts() {
 }
 
 renderProducts();
-

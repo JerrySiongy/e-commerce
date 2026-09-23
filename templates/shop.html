@@ -1,8 +1,151 @@
 {% extends 'base.html' %}
 {% block title %} shop {% endblock %}
 {% block content %}
+<!--
+<div class="container mt-5 pt-5">
+
+<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><li class="nav-item cart mx-3">
+              <div id="cart_icon ">
+                <a class="nav-link active" href="">
+                  <i class="fa-solid fa-cart-shopping fa-2xl" style="color: #e27a0e;"><span
+                      class="total-items-in-cart fs-5">0</span></i>
+                </a>
+              </div>
+            </li></button>
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas right</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    
+<div class="container">
+    <form action="/make_sale" method="post">
+  <div class="container cart">
+    <table class="table">
+      <thead>
+        <div class="cart-header">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">
+              <div class="column1">Item</div>
+            </th>
+            <th scope="col">
+              <div class="column2">Unit price</div>
+            </th>
+            <th scope="col">
+              <div class="column3">Units</div>
+            </th>
+          </tr>
+        </div>
+      </thead>
+      
+      <tbody class="cart-items" >
+        
+       
+        
+      </tbody>
+      
+      <tfoot>
+        <tr>
+          <th>
+            <p>Totals</p>
+          </th>
+          <td>
+            <div class="cart-footer">
+              <div class="subtotal">Subtotal (0 items): $0</div>
+            </div>
+          </td>
+          <td>
+            <div class="cart-footer">
+              
+              
+              <button type="submit" class="checkout">Proceed to checkout</button>
+            </div>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+  </form>
+</div>
+  </div>
+</div>
+
+</div>
+
+-->
 
 
+<!--cart here-->
+<div class="container mt-5 pt-5">
+  <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <li class="nav-item cart mx-3">
+              <div id="cart_icon ">
+                <a class="nav-link active" href="">
+                  <i class="fa-solid fa-cart-shopping fa-2xl" style="color: #e27a0e;"><span
+                      class="total-items-in-cart fs-5">0</span></i>
+                </a>
+              </div>
+            </li>
+  </button>
+  <ul class="dropdown-menu">
+        <!--cart-->
+<div class="container">
+    <form action="/make_sale" method="post">
+  <div class="container cart">
+    <table class="table">
+      <thead>
+        <div class="cart-header">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">
+              <div class="column1">Item</div>
+            </th>
+            <th scope="col">
+              <div class="column2">Unit price</div>
+            </th>
+            <th scope="col">
+              <div class="column3">Units</div>
+            </th>
+          </tr>
+        </div>
+      </thead>
+      
+      <tbody class="cart-items" >
+        
+        <!-- render cart item <tr> rows here -->
+        
+      </tbody>
+      
+      <tfoot>
+        <tr>
+          <th>
+            <p>Totals</p>
+          </th>
+          <td>
+            <div class="cart-footer">
+              <div class="subtotal">Subtotal (0 items): $0</div>
+            </div>
+          </td>
+          <td>
+            <div class="cart-footer">
+              
+              
+              <button type="submit" class="checkout">Proceed to checkout</button>
+            </div>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+  </form>
+</div>
+  </ul>
+</div>
+</div>
 
 <div class="container-fluid mt-5 pt-5">
     <h5 class="fw-bold text-center fs-2"><i class="fa-solid fa-fire fa-float fa-2xl mx-3" style="color: #e27a0e;"></i>
@@ -42,7 +185,15 @@
 
 
 <div class="container-fluid mt-5 ">
-    <h5 class="fw-bold ">Women's collection</h5>
+    <h5 class="fw-bold ">Shirts</h5>
+    <div class="container-fluid products-list mt-5">
+    <div class="row g-2 products shirts">
+      
+      <!-- render shoes here -->
+      
+    </div>    
+    </div>
+    
 </div>
 
 
@@ -61,10 +212,28 @@
 </div>
 
 <div class="container-fluid mt-5 ">
-    <h5 class="fw-bold ">Shoes</h5>
+    <h5 class="fw-bold ">Trousers</h5>
+    <div class="container-fluid products-list mt-5">
+    <div class="row g-2 products torusers">
+      
+      <!-- render shoes here -->
+      
+    </div>    
+    </div>
+    
+</div>
+
+
+<div class="container">
+  <hr>
+</div>
+
+
+<div class="container-fluid mt-5 ">
+    <h5 class="fw-bold">Shoes</h5>
 
     <div class="container-fluid products-list mt-5">
-    <div class="row g-1 shoes">
+    <div class="row g-1 products shoes">
       
       <!-- render shoes here -->
       
@@ -89,8 +258,56 @@
     <p>{{ cartegories_data[1][1] }}</p>
 </div>
 
+<!--cart-->
 <div class="container">
-    <p>{{ unit_data }}</p>
+    <form action="/make_sale" method="post">
+  <div class="container cart">
+    <table class="table">
+      <thead>
+        <div class="cart-header">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">
+              <div class="column1">Item</div>
+            </th>
+            <th scope="col">
+              <div class="column2">Unit price</div>
+            </th>
+            <th scope="col">
+              <div class="column3">Units</div>
+            </th>
+          </tr>
+        </div>
+      </thead>
+      
+      <tbody class="cart-items" >
+        
+        <!-- render cart item <tr> rows here -->
+        
+      </tbody>
+      
+      <tfoot>
+        <tr>
+          <th>
+            <p>Totals</p>
+          </th>
+          <td>
+            <div class="cart-footer">
+              <div class="subtotal">Subtotal (0 items): $0</div>
+            </div>
+          </td>
+          <td>
+            <div class="cart-footer">
+              
+              
+              <button type="submit" class="checkout">Proceed to checkout</button>
+            </div>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+  </form>
 </div>
 
 {% endblock %}
