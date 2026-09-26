@@ -1,15 +1,15 @@
 //select elements
-const featuringEl = document.querySelector(".featuring");
+const shortsEl = document.querySelector(".shorts");
 
 
 //render products
 function renderProducts() {
-	featuring.forEach((product) => {
-		featuringEl.innerHTML += `
+	shorts.forEach((product) => {
+		shortsEl.innerHTML += `
         <div class="col-sm-12 col-md-3 item">
 			<div class="item-container item-img">
 				<div class="card">
-					<img src="${product.imgSrc}"  alt="${product.name}" />
+					<img src="${product.imgSrc}" style="height:290px;" alt="${product.name}" />
 						<div class="card-body">
 							<div class="desc">
 								<ul class="list-group list-group-flush">

@@ -1,11 +1,11 @@
 //select elements
-const productsEl = document.querySelector(".products");
+const trousersEl = document.querySelector(".trousers");
 
 
 //render products
 function renderProducts() {
-	products.forEach((product) => {
-		productsEl.innerHTML += `
+	trousers.forEach((product) => {
+		trousersEl.innerHTML += `
         <div class="col-sm-12 col-md-3 item">
 			<div class="item-container item-img">
 				<div class="card">

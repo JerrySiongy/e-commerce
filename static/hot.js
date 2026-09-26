@@ -1,5 +1,5 @@
 //select elements
-const productsEl = document.querySelector(".products");
+const productsEl = document.querySelector(".hot");
 
 
 //render products

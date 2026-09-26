@@ -1,6 +1,5 @@
-{% extends 'base.html' %}
-{% block title %} shop {% endblock %}
-{% block content %}
+{% extends 'base.html' %} {% block title %} shop {% endblock %} {% block content
+%}
 <!--
 <div class="container mt-5 pt-5">
 
@@ -77,237 +76,299 @@
 
 -->
 
+<!--scrollspy-->
+<div
+  id="navbar-example2"
+  class="navbar bg-body-tertiary px-3 mb-3 mt-5 pt-5 fixed-top"
+>
+  <!--cart starts here-->
+  <div class="container mt-5 pt-5">
+    <div class="dropdown">
+      <button
+        class="btn border border-0 rounded-pill dropdown-toggle"
+        type="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        <li class="nav-item cart mx-3">
+          <div id="cart_icon ">
+            <a class="nav-link active" href="">
+              <i class="fa-solid fa-cart-shopping fa-2xl" style="color: #e27a0e"
+                ><span class="total-items-in-cart fs-5">0</span></i
+              >
+            </a>
+          </div>
+        </li>
+      </button>
+      <ul class="dropdown-menu">
+        <!--cart-->
+        <div class="container">
+          <form action="/make_sale" method="post">
+            <div class="container cart">
+              <table class="table">
+                <thead>
+                  <div class="cart-header">
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">
+                        <div class="column1">Item</div>
+                      </th>
+                      <th scope="col">
+                        <div class="column2">Unit price</div>
+                      </th>
+                      <th scope="col">
+                        <div class="column3">Units</div>
+                      </th>
+                    </tr>
+                  </div>
+                </thead>
+                <tbody class="cart-items">
+                  <!-- render cart item <tr> rows here -->
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <th>
+                      <p>Totals</p>
+                    </th>
+                    <td>
+                      <div class="cart-footer">
+                        <div class="subtotal">Subtotal (0 items): $0</div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="cart-footer">
+                        <button type="submit" class="checkout">
+                          Proceed to checkout
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+          </form>
+        </div>
+      </ul>
+    </div>
+  </div>
+  <!--ends here-->
+  <ul class="nav nav-pills">
+    <li class="nav-item">
+      <a class="nav-link" href="#scrollspyHeading1">Featuring</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#scrollspyHeading2">Shirts</a>
+    </li>
+    <li class="nav-item dropdown">
+      <a
+        class="nav-link dropdown-toggle"
+        data-bs-toggle="dropdown"
+        href="#"
+        role="button"
+        aria-expanded="false"
+        >Dropdown</a
+      >
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#scrollspyHeading3">Trousers</a></li>
+        <li><a class="dropdown-item" href="#scrollspyHeading4">Shorts</a></li>
+        <li><a class="dropdown-item" href="#scrollspyHeading5">Accessories</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
 
 <!--cart here-->
 <div class="container mt-5 pt-5">
   <div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-    <li class="nav-item cart mx-3">
-              <div id="cart_icon ">
-                <a class="nav-link active" href="">
-                  <i class="fa-solid fa-cart-shopping fa-2xl" style="color: #e27a0e;"><span
-                      class="total-items-in-cart fs-5">0</span></i>
-                </a>
-              </div>
-            </li>
-  </button>
-  <ul class="dropdown-menu">
-        <!--cart-->
-<div class="container">
-    <form action="/make_sale" method="post">
-  <div class="container cart">
-    <table class="table">
-      <thead>
-        <div class="cart-header">
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">
-              <div class="column1">Item</div>
-            </th>
-            <th scope="col">
-              <div class="column2">Unit price</div>
-            </th>
-            <th scope="col">
-              <div class="column3">Units</div>
-            </th>
-          </tr>
+    <button
+      class="btn border border-0 rounded-pill dropdown-toggle"
+      type="button"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+    >
+      <li class="nav-item cart mx-3">
+        <div id="cart_icon ">
+          <a class="nav-link active" href="">
+            <i class="fa-solid fa-cart-shopping fa-2xl" style="color: #e27a0e"
+              ><span class="total-items-in-cart fs-5">0</span></i
+            >
+          </a>
         </div>
-      </thead>
-      
-      <tbody class="cart-items" >
-        
-        <!-- render cart item <tr> rows here -->
-        
-      </tbody>
-      
-      <tfoot>
-        <tr>
-          <th>
-            <p>Totals</p>
-          </th>
-          <td>
-            <div class="cart-footer">
-              <div class="subtotal">Subtotal (0 items): $0</div>
-            </div>
-          </td>
-          <td>
-            <div class="cart-footer">
-              
-              
-              <button type="submit" class="checkout">Proceed to checkout</button>
-            </div>
-          </td>
-        </tr>
-      </tfoot>
-    </table>
+      </li>
+    </button>
+    <ul class="dropdown-menu">
+      <!--cart-->
+      <div class="container">
+        <form action="/make_sale" method="post">
+          <div class="container cart">
+            <table class="table">
+              <thead>
+                <div class="cart-header">
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">
+                      <div class="column1">Item</div>
+                    </th>
+                    <th scope="col">
+                      <div class="column2">Unit price</div>
+                    </th>
+                    <th scope="col">
+                      <div class="column3">Units</div>
+                    </th>
+                  </tr>
+                </div>
+              </thead>
+
+              <tbody class="cart-items">
+                <!-- render cart item <tr> rows here -->
+              </tbody>
+
+              <tfoot>
+                <tr>
+                  <th>
+                    <p>Totals</p>
+                  </th>
+                  <td>
+                    <div class="cart-footer">
+                      <div class="subtotal">Subtotal (0 items): $0</div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="cart-footer">
+                      <button type="submit" class="checkout">
+                        Proceed to checkout
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </form>
+      </div>
+    </ul>
   </div>
-  </form>
-</div>
-  </ul>
-</div>
 </div>
 
 <div class="container-fluid mt-5 pt-5">
-    <h5 class="fw-bold text-center fs-2"><i class="fa-solid fa-fire fa-float fa-2xl mx-3" style="color: #e27a0e;"></i>
-        Hot picks</h5>
-
-
+  <h5 class="fw-bold text-center fs-2">
+    <i class="fa-solid fa-fire fa-float fa-2xl mx-3" style="color: #e27a0e"></i>
+    Hot picks
+  </h5>
 </div>
-
-
 
 <div class="container">
-  <hr>
+  <hr />
 </div>
-
-
-<div class="container-fluid mt-5 ">
-    <h5 class="fw-bold ">Men's collection</h5>
-</div>
-
-
-
-<div class="container">
-  <hr>
-</div>
-
 
 <div class="container-fluid mt-5">
-    <h5 class="text-center fw-bold fs-2"><i class="fa-solid fa-tag fa-float fa-2xl mx-3"
-            style="color: #e27a0e;"></i>Featured products</h5>
-
+  <h5 class="fw-bold">Men's collection</h5>
 </div>
-
 
 <div class="container">
-  <hr>
+  <hr />
 </div>
 
+<div class="container-fluid mt-5">
+  <h5 class="text-center fw-bold fs-2">
+    <i class="fa-solid fa-tag fa-float fa-2xl mx-3" style="color: #e27a0e"></i
+    >Featured products
+  </h5>
+</div>
 
-<div class="container-fluid mt-5 ">
-    <h5 class="fw-bold ">Shirts</h5>
-    <div class="container-fluid products-list mt-5">
+<div class="container-fluid mt-5">
+  <h5 class="fw-bold" id="scrollspyHeading1">featuring</h5>
+
+  <div class="container-fluid products-list mt-5">
+    <div class="row g-1 products featuring">
+      <!-- render shoes here -->
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <hr />
+</div>
+
+<div class="container-fluid mt-5">
+  <h5 class="fw-bold" id="scrollspyHeading2">Shirts</h5>
+  <div class="container-fluid products-list mt-5">
     <div class="row g-2 products shirts">
-      
       <!-- render shoes here -->
-      
-    </div>    
     </div>
-    
+  </div>
 </div>
-
 
 <div class="container">
-  <hr>
+  <hr />
 </div>
 
-<div class="container-fluid mt-5 ">
-    <h5 class="text-center fs-2 fw-bold"><i class="fa-solid fa-tower-broadcast fa-float fa-2xl mx-3"
-            style="color: #e27a0e;"></i>Trending</h5>
+<div class="container-fluid mt-5">
+  <h5 class="text-center fs-2 fw-bold">
+    <i
+      class="fa-solid fa-tower-broadcast fa-float fa-2xl mx-3"
+      style="color: #e27a0e"
+    ></i
+    >Trending
+  </h5>
 </div>
-
 
 <div class="container">
-  <hr>
+  <hr />
 </div>
 
-<div class="container-fluid mt-5 ">
-    <h5 class="fw-bold ">Trousers</h5>
-    <div class="container-fluid products-list mt-5">
-    <div class="row g-2 products torusers">
-      
+<div class="container-fluid mt-5">
+  <h5 class="fw-bold" id="scrollspyHeading3">Trousers</h5>
+  <div class="container-fluid products-list mt-5">
+    <div class="row g-2 products trousers">
       <!-- render shoes here -->
-      
-    </div>    
     </div>
-    
+  </div>
 </div>
-
 
 <div class="container">
-  <hr>
+  <hr />
 </div>
 
+<div class="container-fluid mt-5">
+  <h5 class="fw-bold" id="scrollspyHeading4">Shorts</h5>
+  <div class="container-fluid products-list mt-5">
+    <div class="row g-2 products shorts">
+      <!-- render shoes here -->
+    </div>
+  </div>
+</div>
 
-<div class="container-fluid mt-5 ">
-    <h5 class="fw-bold">Shoes</h5>
+<div class="container">
+  <hr />
+</div>
 
-    <div class="container-fluid products-list mt-5">
+<div class="container-fluid mt-5">
+  <h5 class="fw-bold" id="scrollspyHeading5">Shoes</h5>
+
+  <div class="container-fluid products-list mt-5">
     <div class="row g-1 products shoes">
-      
       <!-- render shoes here -->
-      
-    </div>    
     </div>
-
+  </div>
 </div>
 
+<div class="container-fluid mt-5">
+  <h5 class="fw-bold">Accessories</h5>
 
-
+  <div class="container-fluid products-list mt-5">
+    <div class="row g-1 products accessories">
+      <!-- render shoes here -->
+    </div>
+  </div>
+</div>
 
 <div class="container">
-  <hr>
-</div>
-
-
-<div class="container-fluid mt-5 ">
-    <h5 class="fw-bold ">Accessories</h5>
+  <hr />
 </div>
 
 <div class="container mt-5">
-    <p>{{ cartegories_data[1][1] }}</p>
-</div>
-
-<!--cart-->
-<div class="container">
-    <form action="/make_sale" method="post">
-  <div class="container cart">
-    <table class="table">
-      <thead>
-        <div class="cart-header">
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">
-              <div class="column1">Item</div>
-            </th>
-            <th scope="col">
-              <div class="column2">Unit price</div>
-            </th>
-            <th scope="col">
-              <div class="column3">Units</div>
-            </th>
-          </tr>
-        </div>
-      </thead>
-      
-      <tbody class="cart-items" >
-        
-        <!-- render cart item <tr> rows here -->
-        
-      </tbody>
-      
-      <tfoot>
-        <tr>
-          <th>
-            <p>Totals</p>
-          </th>
-          <td>
-            <div class="cart-footer">
-              <div class="subtotal">Subtotal (0 items): $0</div>
-            </div>
-          </td>
-          <td>
-            <div class="cart-footer">
-              
-              
-              <button type="submit" class="checkout">Proceed to checkout</button>
-            </div>
-          </td>
-        </tr>
-      </tfoot>
-    </table>
-  </div>
-  </form>
+  <p>{{ cartegories_data[1][1] }}</p>
 </div>
 
 {% endblock %}

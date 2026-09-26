@@ -976,6 +976,45 @@ const shorts = [
   }
 ];
 
+const accessories =[
+  {
+    id: 107,
+    name: "iphone1",
+    price: 29.99,
+    instock: 100,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.",
+    imgSrc: "static/images/accessories/iphone1.jpg",
+  },
+  {
+    id: 108,
+    name: "iphone2",
+    price: 29.99,
+    instock: 100,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.",
+    imgSrc: "static/images/accessories/iphone2.jpg",
+  },
+  {
+    id: 109,
+    name: "iphone3",
+    price: 29.99,
+    instock: 100,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.",
+    imgSrc: "static/images/accessories/iphone3.jpg",
+  },
+  {
+    id: 110,
+    name: "iphone4",
+    price: 29.99,
+    instock: 100,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.",
+    imgSrc: "static/images/accessories/iphone4.jpg",
+  }
+]
+
 const hot = [
   {
     id: 0,
