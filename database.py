@@ -112,8 +112,58 @@ def insert_sale(sale):
 
 #insert_sale(sale1)
 
+def get_sales():
+    cur.execute("select * from sales")
+    sales = cur.fetchall()
+    
+    return sales
+
+def get_orders():
+    cur.execute('select * from orders')
+    orders = cur.fetchall()
+
+    return orders
+
+def insert_orders(order):
+    cur.execute("insert into orders(pid,quantity) values(%s,%s)",order)
+    conn.commit()
+
+
+def get_employees():
+    cur.execute('select * from employees')
+    employees = cur.fetchall()
+    
+    return employees
+
+def insert_employee(employee):
+    cur.execute('insert into employees(user_id,id_no,role) values(%s,%s,%s)', employee)
+
+
+def get_orderdetails():
+    cur.execute('select * from orderdetails')
+    orderdetails = cur.fetchall()
+    
+    return orderdetails
+
+
+def get_users():
+    cur.execute('select * from users')
+    users = cur.fetchall()
+
+    return users
+
+
 def check_existing_user(email):
     cur.execute('select * from users where email = %s', (email,))
     user = cur.fetchone()
 
     return user
+
+def get_reviews():
+    cur.execute("select * from reviews")
+    reviews = cur.fetchall()
+
+    return reviews
+
+
+

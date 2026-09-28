@@ -1017,13 +1017,40 @@ const accessories =[
 
 const hot = [
   {
-    id: 0,
+    id: 111,
     name: "Cortez black",
     price: 29.99,
     instock: 100,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.",
     imgSrc: "static/images/featuring/cortez_black.jpeg",
+  },
+  {
+    id: 112,
+    name: "dark_art",
+    price: 29.99,
+    instock: 100,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.",
+    imgSrc: "static/images/shirts/dark_art.jpeg",
+  },
+  {
+    id: 113,
+    name: "j5",
+    price: 29.99,
+    instock: 100,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.",
+    imgSrc: "static/images/shoes/j5.jpeg",
+  },
+  {
+    id: 114,
+    name: "iphone3",
+    price: 29.99,
+    instock: 100,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.",
+    imgSrc: "static/images/accessories/iphone3.jpg",
   },
 ];
 

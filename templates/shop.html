@@ -1,88 +1,13 @@
 {% extends 'base.html' %} {% block title %} shop {% endblock %} {% block content
 %}
-<!--
-<div class="container mt-5 pt-5">
-
-<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><li class="nav-item cart mx-3">
-              <div id="cart_icon ">
-                <a class="nav-link active" href="">
-                  <i class="fa-solid fa-cart-shopping fa-2xl" style="color: #e27a0e;"><span
-                      class="total-items-in-cart fs-5">0</span></i>
-                </a>
-              </div>
-            </li></button>
-
-<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas right</h5>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-  </div>
-  <div class="offcanvas-body">
-    
-<div class="container">
-    <form action="/make_sale" method="post">
-  <div class="container cart">
-    <table class="table">
-      <thead>
-        <div class="cart-header">
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">
-              <div class="column1">Item</div>
-            </th>
-            <th scope="col">
-              <div class="column2">Unit price</div>
-            </th>
-            <th scope="col">
-              <div class="column3">Units</div>
-            </th>
-          </tr>
-        </div>
-      </thead>
-      
-      <tbody class="cart-items" >
-        
-       
-        
-      </tbody>
-      
-      <tfoot>
-        <tr>
-          <th>
-            <p>Totals</p>
-          </th>
-          <td>
-            <div class="cart-footer">
-              <div class="subtotal">Subtotal (0 items): $0</div>
-            </div>
-          </td>
-          <td>
-            <div class="cart-footer">
-              
-              
-              <button type="submit" class="checkout">Proceed to checkout</button>
-            </div>
-          </td>
-        </tr>
-      </tfoot>
-    </table>
-  </div>
-  </form>
-</div>
-  </div>
-</div>
-
-</div>
-
--->
 
 <!--scrollspy-->
-<div
+<nav
   id="navbar-example2"
-  class="navbar bg-body-tertiary px-3 mb-3 mt-5 pt-5 fixed-top"
+  class="navbar bg-body-tertiary px-3 mb-3 mt-5 pt-5 fixed-top "
 >
   <!--cart starts here-->
-  <div class="container mt-5 pt-5">
+  <div class="container mt-5 ">
     <div class="dropdown">
       <button
         class="btn border border-0 rounded-pill dropdown-toggle"
@@ -159,23 +84,23 @@
     <li class="nav-item">
       <a class="nav-link" href="#scrollspyHeading2">Shirts</a>
     </li>
-    <li class="nav-item dropdown">
-      <a
-        class="nav-link dropdown-toggle"
-        data-bs-toggle="dropdown"
-        href="#"
-        role="button"
-        aria-expanded="false"
-        >Dropdown</a
-      >
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#scrollspyHeading3">Trousers</a></li>
-        <li><a class="dropdown-item" href="#scrollspyHeading4">Shorts</a></li>
-        <li><a class="dropdown-item" href="#scrollspyHeading5">Accessories</a></li>
-      </ul>
+    <li class="nav-item">
+      <a class="nav-link" href="#scrollspyHeading3">Trousers</a>
     </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#scrollspyHeading4">Shorts</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#scrollspyHeading5">Shoes</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#scrollspyHeading6">Acessories</a>
+    </li>
+    
+      
+  
   </ul>
-</div>
+</nav>
 
 <!--cart here-->
 <div class="container mt-5 pt-5">
@@ -269,12 +194,6 @@
   <hr />
 </div>
 
-<div class="container-fluid mt-5">
-  <h5 class="text-center fw-bold fs-2">
-    <i class="fa-solid fa-tag fa-float fa-2xl mx-3" style="color: #e27a0e"></i
-    >Featured products
-  </h5>
-</div>
 
 <div class="container-fluid mt-5">
   <h5 class="fw-bold" id="scrollspyHeading1">featuring</h5>
@@ -304,13 +223,12 @@
 </div>
 
 <div class="container-fluid mt-5">
-  <h5 class="text-center fs-2 fw-bold">
-    <i
-      class="fa-solid fa-tower-broadcast fa-float fa-2xl mx-3"
-      style="color: #e27a0e"
-    ></i
-    >Trending
-  </h5>
+  <h5 class="fw-bold">Hot</h5>
+  <div class="container-fluid products-list mt-5">
+    <div class="row g-2 products hot">
+      <!-- render shoes here -->
+    </div>
+  </div>
 </div>
 
 <div class="container">
@@ -354,7 +272,7 @@
 </div>
 
 <div class="container-fluid mt-5">
-  <h5 class="fw-bold">Accessories</h5>
+  <h5 class="fw-bold" id="#scrollspyHeading6">Accessories</h5>
 
   <div class="container-fluid products-list mt-5">
     <div class="row g-1 products accessories">

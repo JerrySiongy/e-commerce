@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for
-from database import get_cartegories, get_suppliers, insert_products, insert_suppliers, get_products, get_mensprods, get_stocks, check_existing_user, insert_user,insert_sale, check_available_stock
+from database import get_cartegories, get_suppliers, insert_products, insert_suppliers, get_products, get_mensprods, get_stocks, check_existing_user, insert_user,insert_sale, check_available_stock, get_sales, get_users, insert_employee
 
 
 # to encrypt email and password
@@ -22,11 +22,10 @@ def home():  # view function
     return render_template('index.html')
 
 
-@app.route('/products')
+@app.route('/checkout')
 def products():
-    suppliers_data = get_suppliers()
-    products_data = get_products()
-    return render_template('products.html', suppliers_data=suppliers_data, products_data=products_data)
+    sales_data = get_sales()
+    return render_template('checkout.html',sales_data= sales_data)
 
 
 @app.route('/add_products', methods=['POST', 'GET'])
@@ -62,6 +61,24 @@ def add_supplier():
     return redirect(url_for('dashboard'))
 
 
+@app.route('/add_employee', methods=['GET', 'POST'])
+def add_employee():
+    if request.method == 'POST':
+        user_id=int(request.form['user_id'])
+        id_no = request.form['id_number']
+        role = request.form['role']
+
+        new_employee = (user_id, id_no, role)
+
+        insert_employee(new_employee)
+
+
+    return render_template('shop.html')      
+
+#@app.route('add_shipper', methods=['GET', 'POST'])
+#def add_shipper():
+#    if request.method == 'POST':
+
 @app.route('/shop')
 def shop():
     stock_data = get_stocks()
@@ -70,28 +87,27 @@ def shop():
     return render_template('shop.html', cartegories_data=cartegories_data, products_data=products_data, stock_data=stock_data)
 
 
+
+
 @app.route('/dashboard')
 def dashboard():
     suppliers_data = get_suppliers()
     cartegories_data = get_cartegories()
+    users_data = get_users()
 
-    return render_template('dashboard.html', cartegories_data=cartegories_data, suppliers_data=suppliers_data)
+    return render_template('dashboard.html', cartegories_data=cartegories_data, suppliers_data=suppliers_data, users_data=users_data)
 
 @app.route('/about')
 def about():
 
     return render_template('about.html')
 
-@app.route('/cart')
-def cart():
 
-    return render_template('cart.html')
-
-@app.route('/units')
+@app.route('/stock')
 def units():
-    unit_data = get_stocks()
+    stock_data = get_stocks()
 
-    return render_template('shop.html', unit_data=unit_data)
+    return render_template('shop.html', unit_data=stock_data)
 
 @app.route('/register',methods=['GET', 'POST'])
 def register():

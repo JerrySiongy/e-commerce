@@ -93,25 +93,25 @@
 </form>
 </div>
 
-<!--add stock-->
-<div class="container">
-
-
-  <form>
+<!--add employee-->
+<div class="container mt-3">
+  <h4>Add Employee</h4>
+  <form action="/add_employee" method="post">
   <div class="mb-3">
-    <select class="form-select" aria-label="Default select example">
-  <option selected>Open this select menu</option>
-  <option value="1">One</option>
+    <select class="form-select" aria-label="Default select example" name="user_id">
+      {% for user in users_data %}
+  <option selected>user</option>
+  <option value="{{ user[0] }}">{{ user[1] }}</option>
+  {% endfor %}
   </select>
-    
   </div>
   <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <label for="exampleInputEmail1" class="form-label">ID number</label>
+    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name ='id_number'>
   </div>
   <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1">
+    <label for="exampleInputPassword1" class="form-label">Role</label>
+    <input type="textarea" class="form-control" id="exampleInputPassword1" name="role">
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>

@@ -178,7 +178,7 @@
         <div class="collapse navbar-collapse border-0 border rounded" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/products">Products</a>
+              <a class="nav-link active" aria-current="page" href="/checkout">checkout</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" href="/shop">Shop</a>
@@ -310,6 +310,7 @@
   <script src="static/accessories.js"></script>
   <script src="static/featuring.js"></script>
   <script src="static/shorts.js"></script>
+  <script src="static/hot.js"></script>
 
 <!--actual cart-->
 <script>
@@ -327,7 +328,7 @@ updateCart();
 
 
 // combined list, used for lookups by id (e.g. addToCart, changeNumberOfUnits)
-const allProducts = [...products, ...shoes,...trousers,...accessories,...featuring,...shorts];
+const allProducts = [...products, ...shoes,...trousers,...accessories,...featuring,...shorts, ...hot];
 
 // add to cart
 function addToCart(id) {
