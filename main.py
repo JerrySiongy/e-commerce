@@ -1,9 +1,16 @@
-from flask import Flask, render_template, request, redirect, url_for
-from database import get_cartegories, get_suppliers, insert_products, insert_suppliers, get_products, get_mensprods, get_stocks, check_existing_user, insert_user,insert_sale, check_available_stock, get_sales, get_users, insert_employee
+from flask import Flask, render_template, request, redirect, url_for,flash, session
+
+from database import get_cartegories, get_suppliers, insert_products, insert_suppliers, get_products, get_stocks, check_existing_user, insert_user,insert_sale, check_available_stock, get_sales, get_users, insert_employee, get_shippers, insert_shippers,get_employees,get_employees_name, get_user
 
 
 # to encrypt email and password
 from flask_bcrypt import Bcrypt
+
+
+
+#for the session cookies
+from functools import wraps
+
 
 
 app = Flask(__name__)
@@ -14,6 +21,21 @@ bcrypt = Bcrypt(app)
 
 
 app.secret_key = 'asjnjkabsfkasdnfafhaiouefaoufheuafejfa230029Siongy254'
+
+
+def login_required(f):
+    @wraps(f) # decorator function, a superior function, checks whether the user has logged in or not
+    def protected(*args,**kwargs): #*args(arguments) **kwargs(key-word arguments)
+        if 'email' not in session:
+            return redirect(url_for('login'))
+        return f(*args,**kwargs)
+    return protected
+
+@app.route('/logout')
+def logout():
+    session.pop('email',None) # the none is just in case there's no email in session
+    flash('Logged out successfully', 'success')
+    return redirect(url_for('login'))
 
 
 @app.route('/')  # decorator function
@@ -75,15 +97,23 @@ def add_employee():
 
     return render_template('shop.html')      
 
-#@app.route('add_shipper', methods=['GET', 'POST'])
-#def add_shipper():
-#    if request.method == 'POST':
+@app.route('/add_shipper', methods=['GET', 'POST'])
+def add_shipper():
+    if request.method == 'POST':
+        emp_id = request.form['emp_id']
+
+        new_shipper= (emp_id)
+
+        insert_shippers(new_shipper)
+        print(f'new shipper added')
+
+    return render_template('dashboard.html')
 
 @app.route('/shop')
 def shop():
     stock_data = get_stocks()
     cartegories_data = get_cartegories()
-    products_data = get_products
+    products_data = get_products()
     return render_template('shop.html', cartegories_data=cartegories_data, products_data=products_data, stock_data=stock_data)
 
 
@@ -94,8 +124,27 @@ def dashboard():
     suppliers_data = get_suppliers()
     cartegories_data = get_cartegories()
     users_data = get_users()
+    products_data = get_products()
+    shippers_data=get_shippers()
+    employees_data = get_employees()
+    emp_name = get_employees_name()
+    specific_user = get_user()
 
-    return render_template('dashboard.html', cartegories_data=cartegories_data, suppliers_data=suppliers_data, users_data=users_data)
+    return render_template('dashboard.html', cartegories_data=cartegories_data, suppliers_data=suppliers_data, users_data=users_data, products_data=products_data, shippers_data=shippers_data, employees_data=employees_data, emp_name = emp_name, specific_user=specific_user)
+
+@app.route('/check_user', methods=['GET', 'POST'])
+def check_user():
+
+    existing_user = check_existing_user()
+
+    if request.method == 'POST':
+        email = request.form['spec_user']
+
+
+    return redirect(url_for('dashboard'))    
+
+
+
 
 @app.route('/about')
 def about():
@@ -107,7 +156,19 @@ def about():
 def units():
     stock_data = get_stocks()
 
-    return render_template('shop.html', unit_data=stock_data)
+    return render_template('shop.html', stock_data=stock_data)
+
+@app.route('/add_stock', methods=['GET', 'POST'])
+def add_stock():
+     if request.method == 'POST':
+        pid = request.form['pid']
+        stock_quantity = request.form['s_quantity']
+
+        new_stock = (pid, stock_quantity)
+        add_stock(new_stock)
+        print('stock added successfully')
+     return redirect(url_for('dashboard')) 
+
 
 @app.route('/register',methods=['GET', 'POST'])
 def register():

@@ -1013,7 +1013,7 @@ const accessories =[
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.",
     imgSrc: "static/images/accessories/iphone4.jpg",
   }
-]
+];
 
 const hot = [
   {

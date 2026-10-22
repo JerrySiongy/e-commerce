@@ -20,33 +20,15 @@ def get_cartegories():
     return cartegories
 
 
-def get_mensprods():
-    cur.execute('select * from products where cartegory_id=1;')
-    mensprods = cur.fetchall
+def insert_cart(cartegory):
+    cur.execute('insert into cartegories(cartegory_name, description) values(%s,%s)',cartegory)
+    conn.commit()
 
-    return mensprods
+#cart6= ('collections', 'collections from the best brands') 
 
-
-def get_shoesprods():
-    cur.execute('select * from products where cartegory_id=3;')
-    mensprods = cur.fetchall
-
-    return mensprods
-
-
-def get_womensprods():
-    cur.execute('select * from products where cartegory_id=2;')
-    mensprods = cur.fetchall
-
-    return mensprods
-
-
-def get_accessoriesprods():
-    cur.execute('select * from products where cartegory_id=4;')
-    mensprods = cur.fetchall
-
-    return mensprods
-
+#insert_cart(cart6)
+cart  = get_cartegories()
+#print(cart)
 
 def get_products():
     cur.execute("select * from products")
@@ -83,7 +65,7 @@ def get_stocks():
 
 #print(stock))
 def check_available_stock(pid):
-    cur.execute('select sum(stock_quantity) from stock where pid= %s', (pid,))
+    cur.execute('select sum(stock_quantity) from stocks where pid= %s', (pid,))
     total_stock = cur.fetchone()[0] or 0
 
     cur.execute("select sum(quantity) from sales where pid = %s",(pid,))
@@ -92,12 +74,13 @@ def check_available_stock(pid):
     return total_stock - total_sold
 
 
-def add_stocks():
-    cur.execute()
+
+def add_stock(stock):
+
+    cur.execute("insert into stocks(pid,stock_quantity) values(%s,%s)", stock)
+    conn.commit()
 
 
-def check_available_stock():
-    cur.execute()    
 
 
 def insert_user(user_details):
@@ -135,9 +118,30 @@ def get_employees():
     
     return employees
 
+def get_employees_name():
+    cur.execute('select employees.id as id, name from employees inner join users on employees.user_id = users.id')
+    emp_name = cur.fetchall()
+
+    return emp_name
+
+
 def insert_employee(employee):
     cur.execute('insert into employees(user_id,id_no,role) values(%s,%s,%s)', employee)
+    conn.commit()
 
+def get_shippers():
+    cur.execute("select * from shippers")
+    shippers = cur.fetchall()
+
+    return shippers
+
+def insert_shippers(shipper):
+    cur.execute('insert into shippers(employee_id) values(%s)', shipper)
+    conn.commit()
+
+
+#all_shippers = get_shippers()
+#print(all_shippers)
 
 def get_orderdetails():
     cur.execute('select * from orderdetails')
@@ -164,6 +168,19 @@ def get_reviews():
     reviews = cur.fetchall()
 
     return reviews
+
+
+
+
+def get_user(email):
+    cur.execute('select * from users where email = %s',(email,))
+    user = cur.fetchone()
+    return user
+
+#email = input('enter email: ')
+
+
+
 
 
 

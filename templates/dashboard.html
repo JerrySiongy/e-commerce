@@ -69,6 +69,31 @@
 <div class="container">
   <hr>
 </div>
+
+<!--add stock-->
+<form action="/add_stock" method="post">
+  <h4>Add stock</h4>
+  
+<select class="form-select" aria-label="Default select example">
+  <option selected>Select product</option>
+  {% for products in products_data %}
+  <option value="{{ products[0] }}">{{ products[3] }}</option>
+  {% endfor %}
+</select>
+
+
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Stock Quantity</label>
+    <input type="number" class="form-control" id="exampleInputPassword1">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
+<div class="container">
+  <hr>
+</div>
+
 <!--add supplier-->
 <div class="container ">
   <h5>Add supplier</h5>
@@ -99,8 +124,9 @@
   <form action="/add_employee" method="post">
   <div class="mb-3">
     <select class="form-select" aria-label="Default select example" name="user_id">
-      {% for user in users_data %}
+      
   <option selected>user</option>
+  {% for user in users_data %}
   <option value="{{ user[0] }}">{{ user[1] }}</option>
   {% endfor %}
   </select>
@@ -116,11 +142,38 @@
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 
-
-
-
-
   
+</div>
+
+<div class="container">
+  <hr>
+</div>
+
+<!--add shipper-->
+<div class="container">
+  <h4>Add Shipper</h4>
+  <form action="/add_shipper" method="post">
+  <select class="form-select" aria-label="Default select example" name = "emp_id">
+    {% for employees in emp_name %}
+  <option selected>add shipper</option>
+  <option value="{{ employees[0] }}">{{ employees[1] }}</option>
+    {% endfor %}
+  </select>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+
+<div class="container">
+<p>check user</p>
+  <form action="/check_user" method="post">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name='spec_user'>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
 </div>
 
 {% endblock %}
