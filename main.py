@@ -135,6 +135,10 @@ def dashboard():
 @app.route('/check_user', methods=['GET', 'POST'])
 def check_user():
 
+    user =get_user()
+
+    
+
     existing_user = check_existing_user()
 
     if request.method == 'POST':
@@ -237,6 +241,8 @@ def make_sale():
         
         pid = request.form['pid']
         quantity = request.form['quantity']
+        user_email = request.form['email']
+        user_id = get_user(user_email)
 
         new_sale = (pid,quantity)
         insert_sale(new_sale)

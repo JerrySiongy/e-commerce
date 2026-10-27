@@ -171,11 +171,17 @@ def get_reviews():
 
 
 
-
+#used to get the user's id
 def get_user(email):
-    cur.execute('select * from users where email = %s',(email,))
+    cur.execute('select id from users where email = %s',(email,))
     user = cur.fetchone()
     return user
+
+user1 = input('enter email: ')
+
+
+
+print(get_user(user1))
 
 #email = input('enter email: ')
 
