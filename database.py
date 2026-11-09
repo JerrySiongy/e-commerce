@@ -108,7 +108,7 @@ def get_orders():
     return orders
 
 def insert_orders(order):
-    cur.execute("insert into orders(pid,quantity) values(%s,%s)",order)
+    cur.execute("insert into orders(user_id,shipper_id,order_type) values(%s,%s,%s)",order)
     conn.commit()
 
 
@@ -138,6 +138,13 @@ def get_shippers():
 def insert_shippers(shipper):
     cur.execute('insert into shippers(employee_id) values(%s)', shipper)
     conn.commit()
+
+#get shipper name    
+def get_shipper_name():
+    cur.execute('select users.id, users.name from users inner join employees on users.id=employees.user_id inner join shippers on employees.id = shippers.employee_id;')
+    ship_name = cur.fetchall()
+
+    return ship_name
 
 
 #all_shippers = get_shippers()
@@ -177,11 +184,11 @@ def get_user(email):
     user = cur.fetchone()
     return user
 
-user1 = input('enter email: ')
+#user1 = input('enter email: ')
 
 
 
-print(get_user(user1))
+#print(get_user(user1))
 
 #email = input('enter email: ')
 

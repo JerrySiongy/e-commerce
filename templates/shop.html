@@ -4,10 +4,10 @@
 <!--scrollspy-->
 <nav
   id="navbar-example2"
-  class="navbar bg-body-tertiary px-3 mb-3 mt-5 pt-5 fixed-top "
+  class="navbar bg-body-tertiary px-3 mb-3 mt-5 pt-5 fixed-top"
 >
   <!--cart starts here-->
-  <div class="container mt-5 ">
+  <div class="container mt-5 w-50">
     <div class="dropdown">
       <button
         class="btn border border-0 rounded-pill dropdown-toggle"
@@ -63,11 +63,43 @@
                     <td>
                       <!-- here we'll get the user_id-->
                       <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
-  </div>
+                        <label for="exampleInputEmail1" class="form-label"
+                          >Email address</label
+                        >
+                        <input
+                          type="email"
+                          class="form-control"
+                          id="exampleInputEmail1"
+                          aria-describedby="emailHelp"
+                          name="email"
+                        />
+                      </div>
                     </td>
+                    <!--order types-->
+                    <select
+                      class="form-select"
+                      aria-label="Default select example"
+                      name="order_type"
+                    >
+                      <option selected>select mode of exchange</option>
+                      <option value="pick_up">Pick Up</option>
+                      <option value="delivery">Delivery</option>
+                    </select>
+
                     <td>
+                      <!--select courier-->
+                      <select
+                      class="form-select"
+                      aria-label="Default select example"
+                      name="shipper"
+                    >
+                      <option selected>select shipper</option>
+                      {% for shipper in shipper_name %}
+                      <option value="shipper[0]">{{ shipper[1] }}</option>
+                      {% endfor %}
+                      <option value="none">none</option>
+                    </select>
+
                       <!--original-->
                       <div class="cart-footer">
                         <button type="submit" class="checkout">
@@ -104,9 +136,6 @@
     <li class="nav-item">
       <a class="nav-link" href="#scrollspyHeading6">Acessories</a>
     </li>
-    
-      
-  
   </ul>
 </nav>
 
@@ -201,7 +230,6 @@
 <div class="container">
   <hr />
 </div>
-
 
 <div class="container-fluid mt-5">
   <h5 class="fw-bold" id="scrollspyHeading1">featuring</h5>

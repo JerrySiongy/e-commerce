@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for,flash, session
 
-from database import get_cartegories, get_suppliers, insert_products, insert_suppliers, get_products, get_stocks, check_existing_user, insert_user,insert_sale, check_available_stock, get_sales, get_users, insert_employee, get_shippers, insert_shippers,get_employees,get_employees_name, get_user
+from database import get_cartegories, get_suppliers, insert_products, insert_suppliers, get_products, get_stocks, check_existing_user, insert_user,insert_sale,insert_orders, check_available_stock, get_sales, get_users, insert_employee, get_shippers, insert_shippers,get_employees,get_employees_name, get_user,get_shipper_name
 
 
 # to encrypt email and password
@@ -114,7 +114,9 @@ def shop():
     stock_data = get_stocks()
     cartegories_data = get_cartegories()
     products_data = get_products()
-    return render_template('shop.html', cartegories_data=cartegories_data, products_data=products_data, stock_data=stock_data)
+    shipper_name = get_shipper_name()
+
+    return render_template('shop.html', cartegories_data=cartegories_data, products_data=products_data, stock_data=stock_data,shipper_name=shipper_name)
 
 
 
@@ -242,10 +244,15 @@ def make_sale():
         pid = request.form['pid']
         quantity = request.form['quantity']
         user_email = request.form['email']
+        order_type = request.form['order_type']
+        shipper_id = request.form['shipper_id']
         user_id = get_user(user_email)
+        
 
         new_sale = (pid,quantity)
+        orders = (int(user_id),shipper_id,order_type)
         insert_sale(new_sale)
+        insert_orders(orders)
 
     return redirect(url_for("sales"))
 
